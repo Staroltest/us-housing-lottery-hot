@@ -1,0 +1,66 @@
+{
+ "generated_at": "2026-11-18",
+ "site": "https://Staroltest.github.io/us-housing-lottery-hot",
+ "summary": {
+  "total": 9,
+  "passed": 7,
+  "warn": 2,
+  "failed": 0
+ },
+ "checks": [
+  {
+   "key": "robots",
+   "label": "robots.txt 点名放行 AI 爬虫",
+   "status": "pass",
+   "detail": "已点名放行 GPTBot / ClaudeBot / PerplexityBot 等，含 Sitemap 声明"
+  },
+  {
+   "key": "sitemap",
+   "label": "sitemap.xml 条数与漏页",
+   "status": "pass",
+   "detail": "共 81 条 URL，磁盘 79 个 HTML 页全部在列"
+  },
+  {
+   "key": "llms",
+   "label": "llms.txt 存在",
+   "status": "pass",
+   "detail": "中英 llms.txt 已生成，含数据 JSON 入口（未配置 MCP 端点）"
+  },
+  {
+   "key": "canonical",
+   "label": "首页 canonical / hreflang",
+   "status": "pass",
+   "detail": "中英首页 canonical、hreflang=zh-CN/en 与 x-default 齐全"
+  },
+  {
+   "key": "jsonld",
+   "label": "首页 JSON-LD（WebSite）",
+   "status": "pass",
+   "detail": "中英首页 WebSite 结构化数据含 inLanguage（zh-CN / en）"
+  },
+  {
+   "key": "item",
+   "label": "详情页 Article（抽查最新 1 篇）",
+   "status": "pass",
+   "detail": "中英详情页含 datePublished / dateModified，og:type=article"
+  },
+  {
+   "key": "mcp",
+   "label": "MCP 端点可达性",
+   "status": "warn",
+   "detail": "未配置 MCP 端点（site.mcp_url 为空），llms.txt 不含 MCP 段"
+  },
+  {
+   "key": "mirror",
+   "label": "镜像站部署",
+   "status": "warn",
+   "detail": "未配置镜像（site.mirror_url 为空），跳过此项"
+  },
+  {
+   "key": "feed",
+   "label": "feed.xml 正常",
+   "status": "pass",
+   "detail": "RSS 2.0 正常，中英各含 15 / 15 条"
+  }
+ ]
+}

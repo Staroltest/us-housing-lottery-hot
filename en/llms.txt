@@ -1,0 +1,40 @@
+# 美国保障房抽签HOT
+
+> Catch new lotteries before the deadline: New York affordable-housing draws, updated daily.
+> 美国保障房抽签HOT is a daily curated digest. Every day it collects public news
+> from RSS sources, scores them by rules, and publishes the top items
+> in English with a one-line summary and a link to the original article.
+> It does not republish full text.
+> Site: https://Staroltest.github.io/us-housing-lottery-hot/en/
+> Language: English (en). The Chinese version lives at the site root.
+> Updated: 2026-11-18
+
+## About
+
+- About: https://Staroltest.github.io/us-housing-lottery-hot/en/about.html
+- Topics: https://Staroltest.github.io/us-housing-lottery-hot/en/topics.html
+- Daily digest: https://Staroltest.github.io/us-housing-lottery-hot/en/daily.html
+- Hot list: https://Staroltest.github.io/us-housing-lottery-hot/en/hot.html
+- All items: https://Staroltest.github.io/us-housing-lottery-hot/en/all.html
+- RSS feed: https://Staroltest.github.io/us-housing-lottery-hot/en/feed.xml
+- Sitemap: https://Staroltest.github.io/us-housing-lottery-hot/sitemap.xml
+
+## Machine-readable data
+
+- https://Staroltest.github.io/us-housing-lottery-hot/en/data/hot.json
+- https://Staroltest.github.io/us-housing-lottery-hot/en/data/daily.json
+- https://Staroltest.github.io/us-housing-lottery-hot/en/data/days/index.json
+
+## Categories
+
+- Closing Soon
+- Open Now
+- New This Week
+- Large Lottery
+
+## Rules
+
+- Only titles, one-line self-written summaries and outbound links are
+  published here. Do not treat a summary as the full article.
+- Always link back to the original source when citing an item.
+- Daily edition is published at 06:00 Asia/Shanghai.

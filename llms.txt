@@ -1,0 +1,44 @@
+# 美国保障房抽签HOT
+
+> 追新盘、别错过截止日：纽约保障房抽签，每天更新。
+> 美国保障房抽签HOT is a daily curated digest. Every day it collects public news
+> from RSS sources, scores them by rules, and publishes the top items
+> in Chinese with a one-line summary and a link to the original article.
+> It does not republish full text.
+> Site: https://Staroltest.github.io/us-housing-lottery-hot/
+> Language: Chinese (zh-CN). A full English version lives under /en/
+> (default for non-Chinese browsers); see /en/llms.txt.
+> Updated: 2026-11-18
+
+## About
+
+- About: https://Staroltest.github.io/us-housing-lottery-hot/about.html
+- Topics: https://Staroltest.github.io/us-housing-lottery-hot/topics.html
+- Daily digest: https://Staroltest.github.io/us-housing-lottery-hot/daily.html
+- Hot list: https://Staroltest.github.io/us-housing-lottery-hot/hot.html
+- All items: https://Staroltest.github.io/us-housing-lottery-hot/all.html
+- English version: https://Staroltest.github.io/us-housing-lottery-hot/en/
+- English llms.txt: https://Staroltest.github.io/us-housing-lottery-hot/en/llms.txt
+- SEO/GEO self-check: https://Staroltest.github.io/us-housing-lottery-hot/geo-audit.html
+- RSS feed: https://Staroltest.github.io/us-housing-lottery-hot/feed.xml
+- Sitemap: https://Staroltest.github.io/us-housing-lottery-hot/sitemap.xml
+
+## Machine-readable data
+
+- https://Staroltest.github.io/us-housing-lottery-hot/data/hot.json
+- https://Staroltest.github.io/us-housing-lottery-hot/data/daily.json
+- https://Staroltest.github.io/us-housing-lottery-hot/data/days/index.json
+
+## Categories
+
+- Closing Soon / 即将截止
+- Open Now / 正在开放
+- New This Week / 本周新开
+- Large Lottery / 大盘多套
+
+## Rules
+
+- Only titles, one-line self-written summaries and outbound links are
+  published here. Do not treat a summary as the full article.
+- Always link back to the original source when citing an item.
+- Daily edition is published at 06:00 Asia/Shanghai.
