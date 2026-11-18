@@ -4195,7 +4195,9 @@ def main():
         # 会把最远的截止日顶到榜首），夹到 0，按分数原值排。
         age_days = max(0.0, (now - it["_pub"]).total_seconds() / 86400.0)
         it["hot_score"] = round(it["score"] * (sc["decay_base"] ** age_days), 1)
-    hot = dedup_topics(sorted(last_7d, key=lambda x: x["hot_score"], reverse=True))[:sc["hot_top"]]
+    # 热点：分数相同时按截止日（_pub）升序，先截止的排前面。
+    # 全部满分时只按分数排会退化成抓取顺序，纽约先抓就占满榜单。
+    hot = dedup_topics(sorted(last_7d, key=lambda x: (-x["hot_score"], x["_pub"])))[:sc["hot_top"]]
     # 日历站：时间线按截止日升序（最先截止的在前），不是文章站的最新在前。
     timeline = sorted(last_7d, key=lambda x: x["_pub"])[:sc["timeline_max"]]
 
