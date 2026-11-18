@@ -1,1 +1,229 @@
-{"categories":[{"key":"closing-soon","keywords":["即将截止","closing soon","deadline soon","截止","最后两天","last days","deadline in","快截止","urgent","days left"],"label":"即将截止","label_en":"Closing Soon"},{"key":"open","keywords":["正在开放","open now","open lottery","抽签进行中","lottery open","开放申请","accepting applications"],"label":"正在开放","label_en":"Open Now"},{"key":"new-this-week","keywords":["本周新开","new this week","newly opened","新开","just opened","opened this week"],"label":"本周新开","label_en":"New This Week"},{"key":"large","keywords":["大盘","large lottery","20 units or more","多套","large","many units"],"label":"大盘多套","label_en":"Large Lottery"}],"scoring":{"base":50,"daily_hours":24,"daily_top":10,"decay_base":0.8,"dev_keyword_bonus":5,"dev_keyword_cap":25,"dev_keywords":["bronx","brooklyn","queens","manhattan","staten island","lottery","affordable","deadline","rental","closing soon","open now"],"history_days":30,"hot_days":7,"hot_top":20,"noise_keyword_floor":-15,"noise_keyword_penalty":-5,"noise_keywords":["sweepstakes","casino","giveaway","免费领取","抽奖送"],"recency":[{"bonus":25,"max_hours":6},{"bonus":20,"max_hours":24},{"bonus":10,"max_hours":72}],"selected_hours":48,"selected_min":65,"tier_bonus":{"T1":10,"T2":0,"T3":-15},"timeline_days":7,"timeline_max":100},"site":{"about_blocks":[{"h":"定位","paras":["本站是纽约保障房抽签的日历：首版只收 Housing Connect 的公开抽签，按截止日排，正在开放的在前、快截止的置顶。每半小时刷新一次官方公开数据，帮读者在截止日前看到新盘，而不是错过之后才知道。","抽签是很多中低收入家庭拿到低于市价房源的主要通道，但各城市的系统彼此割裂，没有统一日历；一个盘的申请窗口常常只有三周左右，错过就只能等下一轮。"]},{"h":"为什么这么难抢","paras":["按市房屋保护与开发局（HPD）与 NYU Furman Center 公开报告里的大意：2024 年，纽约 Housing Connect 上大约 600 万份申请去争大约 1 万套房，平均每套房背后有约 541 份申请；HPD 说 2024 年通过抽签安置了 1 万多户家庭；2024 年 9 月到 2026 年 8 月这两年里，一共办了 591 场抽签、放出 23,820 套房。数字是转述，不是抄原文。","点评：供给远远跟不上申请量，所以本站的重点不是罗列所有盘，而是把“还来得及申请、还剩几天”放在最显眼的位置。"]},{"h":"怎么做","paras":["采集——纽约市公开数据（NYC Open Data）上的 Housing Connect 抽签数据集，每半小时拉一次，只取抽签编号、区、套数、户型分布、收入档与起止日期这些事实。","改写——每条的标题与一句话简介都是本站自己写的，还带一句自己的点评（比如还剩几天、适合谁）；不转载官方的原文标题、正文与摘要。","排序——按截止日排，快截止的在前；已过截止日的抽签会从精选与热点里撤下。","申请——每条都链回 Housing Connect 官方申请页，申请本身请在官方页面完成，本站不代收任何申请。"]},{"h":"版权与出处","paras":["数据来自 NYC Open Data 公开数据集 vy5i-a666（Advertised Lotteries on Housing Connect by Lottery）与 Housing Connect 官方申请页。本站只展示自己改写的标题、一句话简介、事实字段（区、套数、截止日）与官方链接，不转载原文标题、正文或摘要。"]},{"h":"制作人","paras":["由 Staroltest 维护。喜欢本站可以扫页脚的赞赏码支持（USDT）。"]}],"about_blocks_en":[{"h":"What it is","paras":["This site is a calendar for New York affordable-housing lotteries. The first version covers only public Housing Connect lotteries, sorted by deadline: open lotteries first, closing soon at the top. It refreshes the official open data every 30 minutes, so readers see new openings before the deadline instead of after it.","Lotteries are the main route for many low- and middle-income households to a below-market home, but each city's system is separate and there is no unified calendar. One opening often stays open for only about three weeks, and missing it means waiting for the next round."]},{"h":"Why it is so competitive","paras":["In the broad strokes of public reports from the NYC Department of Housing Preservation and Development (HPD) and the NYU Furman Center: in 2024, about 6 million applications chased about 10,000 homes on NYC Housing Connect, roughly 541 applications per home on average. HPD says more than 10,000 households were placed through lotteries in 2024. From September 2024 to August 2026, there were 591 lotteries offering 23,820 homes. These figures are paraphrased here, not copied.","Our take: supply trails demand by a wide margin, so this site focuses less on listing every opening and more on showing what is still open and how many days are left."]},{"h":"How it works","paras":["Collect — the NYC Open Data Housing Connect lottery dataset, fetched every 30 minutes, using only facts: lottery number, borough, unit count, bedroom mix, income bands and the opening and closing dates.","Rewrite — every title and one-line summary is written by this site, with a short note of our own (for example, how many days are left and who it may suit). We do not republish the official headline, body or summary.","Sort — by deadline, soonest first. Lotteries past their deadline leave the featured and hot lists.","Apply — every entry links back to the official Housing Connect application page. Applications themselves must be completed on the official page; this site does not collect applications."]},{"h":"Copyright and sources","paras":["Data comes from the NYC Open Data public dataset vy5i-a666 (Advertised Lotteries on Housing Connect by Lottery) and the official Housing Connect application pages. This site only shows its own paraphrased titles, one-line summaries, factual fields (borough, unit count, deadline) and the official link. It does not republish original titles, bodies or summaries."]},{"h":"Made by","paras":["Maintained by Staroltest. If you like this site, you can support it with the tip codes in the footer (USDT)."]}],"audience":"美国大城市中低收入租房者，追新开抽签、怕错过截止日的人","audience_en":"Low- and middle-income renters in major US cities who follow new lottery openings and do not want to miss a deadline","crawler_name":"us-housing-lottery-hotBot/1.0","description":"首版只收纽约 Housing Connect 公开抽签：按截止日排序，只显示自己改写的标题与一句话简介、区、套数、截止日与官方申请链接，不转载原文。","description_en":"First version covers only public NYC Housing Connect lotteries, sorted by deadline. It shows only our own paraphrased titles and one-line summaries, plus borough, unit count, deadline and the official application link. No original text is republished.","edition_time_cst":"06:00","footer_note":"数据来自纽约市公开数据（NYC Open Data）与 Housing Connect 官方申请页；本站只做自己改写的摘要与点评，不转载原文。","footer_note_en":"Data comes from NYC Open Data and the official Housing Connect application pages. This site only publishes its own paraphrased summaries and commentary, never the original text.","launch_date":"2026-11-18","mcp_url":"https://us-housing-lottery-hot.pages.dev/mcp","mirror_url":"https://us-housing-lottery-hot.pages.dev","name":"美国保障房抽签HOT","repo":"https://github.com/Staroltest/us-housing-lottery-hot","slug":"us-housing-lottery-hot","subtitle":"纽约保障房抽签日历：新开抽签、截止提醒，只写自己话的简介。","subtitle_en":"A calendar of New York affordable-housing lotteries: new openings and deadline reminders, in our own words.","tagline":"追新盘、别错过截止日：纽约保障房抽签，每天更新。","tagline_en":"Catch new lotteries before the deadline: New York affordable-housing draws, updated daily.","timezone":"Asia/Shanghai","tips":[{"address":"TBH8fAi6Vbr9G4VW3PDm3DugZU6fknr6na","image":"assets/tip-usdt.png","label":"USDT · TRC20"},{"address":"7pitxN5xECR2NH2qdhFiSRC3fDdMsmVczqFSY4Zz4v5H","image":"assets/tip-usdt-sol.png","label":"USDT · Solana"}],"title":"美国保障房抽签HOT","title_en":"US Housing Lottery HOT","url":"https://Staroltest.github.io/us-housing-lottery-hot","web_analytics_token":""}}
+{
+  "categories": [
+    {
+      "key": "closing-soon",
+      "keywords": [
+        "即将截止",
+        "closing soon",
+        "deadline soon",
+        "截止",
+        "最后两天",
+        "last days",
+        "deadline in",
+        "快截止",
+        "urgent",
+        "days left"
+      ],
+      "label": "即将截止",
+      "label_en": "Closing Soon"
+    },
+    {
+      "key": "open",
+      "keywords": [
+        "正在开放",
+        "open now",
+        "open lottery",
+        "抽签进行中",
+        "lottery open",
+        "开放申请",
+        "accepting applications"
+      ],
+      "label": "正在开放",
+      "label_en": "Open Now"
+    },
+    {
+      "key": "new-this-week",
+      "keywords": [
+        "本周新开",
+        "new this week",
+        "newly opened",
+        "新开",
+        "just opened",
+        "opened this week"
+      ],
+      "label": "本周新开",
+      "label_en": "New This Week"
+    },
+    {
+      "key": "large",
+      "keywords": [
+        "大盘",
+        "large lottery",
+        "20 units or more",
+        "多套",
+        "large",
+        "many units"
+      ],
+      "label": "大盘多套",
+      "label_en": "Large Lottery"
+    }
+  ],
+  "scoring": {
+    "base": 50,
+    "daily_hours": 24,
+    "daily_top": 10,
+    "decay_base": 0.8,
+    "dev_keyword_bonus": 5,
+    "dev_keyword_cap": 25,
+    "dev_keywords": [
+      "bronx",
+      "brooklyn",
+      "queens",
+      "manhattan",
+      "staten island",
+      "lottery",
+      "affordable",
+      "deadline",
+      "rental",
+      "closing soon",
+      "open now"
+    ],
+    "history_days": 30,
+    "hot_days": 7,
+    "hot_top": 20,
+    "noise_keyword_floor": -15,
+    "noise_keyword_penalty": -5,
+    "noise_keywords": [
+      "sweepstakes",
+      "casino",
+      "giveaway",
+      "免费领取",
+      "抽奖送"
+    ],
+    "recency": [
+      {
+        "bonus": 25,
+        "max_hours": 6
+      },
+      {
+        "bonus": 20,
+        "max_hours": 24
+      },
+      {
+        "bonus": 10,
+        "max_hours": 72
+      }
+    ],
+    "selected_hours": 48,
+    "selected_min": 65,
+    "tier_bonus": {
+      "T1": 10,
+      "T2": 0,
+      "T3": -15
+    },
+    "timeline_days": 7,
+    "timeline_max": 100
+  },
+  "site": {
+    "about_blocks": [
+      {
+        "h": "定位",
+        "paras": [
+          "本站是纽约保障房抽签的日历：首版只收 Housing Connect 的公开抽签，按截止日排，正在开放的在前、快截止的置顶。每半小时刷新一次官方公开数据，帮读者在截止日前看到新盘，而不是错过之后才知道。",
+          "抽签是很多中低收入家庭拿到低于市价房源的主要通道，但各城市的系统彼此割裂，没有统一日历；一个盘的申请窗口常常只有三周左右，错过就只能等下一轮。"
+        ]
+      },
+      {
+        "h": "为什么这么难抢",
+        "paras": [
+          "按市房屋保护与开发局（HPD）与 NYU Furman Center 公开报告里的大意：2024 年，纽约 Housing Connect 上大约 600 万份申请去争大约 1 万套房，平均每套房背后有约 541 份申请；HPD 说 2024 年通过抽签安置了 1 万多户家庭；2024 年 9 月到 2026 年 8 月这两年里，一共办了 591 场抽签、放出 23,820 套房。数字是转述，不是抄原文。",
+          "点评：供给远远跟不上申请量，所以本站的重点不是罗列所有盘，而是把“还来得及申请、还剩几天”放在最显眼的位置。"
+        ]
+      },
+      {
+        "h": "怎么做",
+        "paras": [
+          "采集——纽约市公开数据（NYC Open Data）上的 Housing Connect 抽签数据集，每半小时拉一次，只取抽签编号、区、套数、户型分布、收入档与起止日期这些事实。",
+          "改写——每条的标题与一句话简介都是本站自己写的，还带一句自己的点评（比如还剩几天、适合谁）；不转载官方的原文标题、正文与摘要。",
+          "排序——按截止日排，快截止的在前；已过截止日的抽签会从精选与热点里撤下。",
+          "申请——每条都链回 Housing Connect 官方申请页，申请本身请在官方页面完成，本站不代收任何申请。"
+        ]
+      },
+      {
+        "h": "版权与出处",
+        "paras": [
+          "数据来自 NYC Open Data 公开数据集 vy5i-a666（Advertised Lotteries on Housing Connect by Lottery）与 Housing Connect 官方申请页。本站只展示自己改写的标题、一句话简介、事实字段（区、套数、截止日）与官方链接，不转载原文标题、正文或摘要。"
+        ]
+      },
+      {
+        "h": "制作人",
+        "paras": [
+          "由 Staroltest 维护。喜欢本站可以扫页脚的赞赏码支持（USDT）。"
+        ]
+      }
+    ],
+    "about_blocks_en": [
+      {
+        "h": "What it is",
+        "paras": [
+          "This site is a calendar for New York affordable-housing lotteries. The first version covers only public Housing Connect lotteries, sorted by deadline: open lotteries first, closing soon at the top. It refreshes the official open data every 30 minutes, so readers see new openings before the deadline instead of after it.",
+          "Lotteries are the main route for many low- and middle-income households to a below-market home, but each city's system is separate and there is no unified calendar. One opening often stays open for only about three weeks, and missing it means waiting for the next round."
+        ]
+      },
+      {
+        "h": "Why it is so competitive",
+        "paras": [
+          "In the broad strokes of public reports from the NYC Department of Housing Preservation and Development (HPD) and the NYU Furman Center: in 2024, about 6 million applications chased about 10,000 homes on NYC Housing Connect, roughly 541 applications per home on average. HPD says more than 10,000 households were placed through lotteries in 2024. From September 2024 to August 2026, there were 591 lotteries offering 23,820 homes. These figures are paraphrased here, not copied.",
+          "Our take: supply trails demand by a wide margin, so this site focuses less on listing every opening and more on showing what is still open and how many days are left."
+        ]
+      },
+      {
+        "h": "How it works",
+        "paras": [
+          "Collect — the NYC Open Data Housing Connect lottery dataset, fetched every 30 minutes, using only facts: lottery number, borough, unit count, bedroom mix, income bands and the opening and closing dates.",
+          "Rewrite — every title and one-line summary is written by this site, with a short note of our own (for example, how many days are left and who it may suit). We do not republish the official headline, body or summary.",
+          "Sort — by deadline, soonest first. Lotteries past their deadline leave the featured and hot lists.",
+          "Apply — every entry links back to the official Housing Connect application page. Applications themselves must be completed on the official page; this site does not collect applications."
+        ]
+      },
+      {
+        "h": "Copyright and sources",
+        "paras": [
+          "Data comes from the NYC Open Data public dataset vy5i-a666 (Advertised Lotteries on Housing Connect by Lottery) and the official Housing Connect application pages. This site only shows its own paraphrased titles, one-line summaries, factual fields (borough, unit count, deadline) and the official link. It does not republish original titles, bodies or summaries."
+        ]
+      },
+      {
+        "h": "Made by",
+        "paras": [
+          "Maintained by Staroltest. If you like this site, you can support it with the tip codes in the footer (USDT)."
+        ]
+      }
+    ],
+    "audience": "美国大城市中低收入租房者，追新开抽签、怕错过截止日的人",
+    "audience_en": "Low- and middle-income renters in major US cities who follow new lottery openings and do not want to miss a deadline",
+    "crawler_name": "us-housing-lottery-hotBot/1.0",
+    "description": "首版只收纽约 Housing Connect 公开抽签：按截止日排序，只显示自己改写的标题与一句话简介、区、套数、截止日与官方申请链接，不转载原文。",
+    "description_en": "First version covers only public NYC Housing Connect lotteries, sorted by deadline. It shows only our own paraphrased titles and one-line summaries, plus borough, unit count, deadline and the official application link. No original text is republished.",
+    "edition_time_cst": "06:00",
+    "footer_note": "数据来自纽约市公开数据（NYC Open Data）与 Housing Connect 官方申请页；本站只做自己改写的摘要与点评，不转载原文。",
+    "footer_note_en": "Data comes from NYC Open Data and the official Housing Connect application pages. This site only publishes its own paraphrased summaries and commentary, never the original text.",
+    "launch_date": "2026-11-18",
+    "mcp_url": "https://us-housing-lottery-hot.pages.dev/mcp",
+    "mirror_url": "https://us-housing-lottery-hot.pages.dev",
+    "name": "美国保障房抽签HOT",
+    "repo": "https://github.com/Staroltest/us-housing-lottery-hot",
+    "slug": "us-housing-lottery-hot",
+    "subtitle": "纽约保障房抽签日历：新开抽签、截止提醒，只写自己话的简介。",
+    "subtitle_en": "A calendar of New York affordable-housing lotteries: new openings and deadline reminders, in our own words.",
+    "tagline": "追新盘、别错过截止日：纽约保障房抽签，每天更新。",
+    "tagline_en": "Catch new lotteries before the deadline: New York affordable-housing draws, updated daily.",
+    "timezone": "Asia/Shanghai",
+    "tips": [
+      {
+        "address": "TBH8fAi6Vbr9G4VW3PDm3DugZU6fknr6na",
+        "image": "assets/tip-usdt.png",
+        "label": "USDT · TRC20"
+      },
+      {
+        "address": "7pitxN5xECR2NH2qdhFiSRC3fDdMsmVczqFSY4Zz4v5H",
+        "image": "assets/tip-usdt-sol.png",
+        "label": "USDT · Solana"
+      }
+    ],
+    "title": "美国保障房抽签HOT",
+    "title_en": "US Housing Lottery HOT",
+    "url": "https://Staroltest.github.io/us-housing-lottery-hot",
+    "web_analytics_token": "",
+    "name_en": "US Housing Lottery HOT"
+  }
+}

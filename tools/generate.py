@@ -1031,6 +1031,12 @@ def _L(lang, zh, en):
     保证中文输出与单语版一字不差。"""
     return en if lang == "en" else zh
 
+def brand_name(site, lang="zh"):
+    """Brand name per language tree: English tree must never show Chinese."""
+    if lang == "en":
+        return site.get("name_en") or site.get("title_en") or site.get("name", "HOT")
+    return site.get("name", "HOT")
+
 
 WEEKDAYS = ["星期一", "星期二", "星期三", "星期四", "星期五", "星期六", "星期日"]
 WEEKDAYS_SHORT = ["周一", "周二", "周三", "周四", "周五", "周六", "周日"]
@@ -2303,9 +2309,9 @@ def sidebar_html(site, active, prefix="", base="", lang="zh", alt_href=None):
     if alt_href:
         other = "en" if lang == "zh" else "zh"
         lang_link = (f'<a class="gh" href="{alt_href}" {_lang_onclick(site, other)}>'
-                     f'{_L(lang, "English", "中文")}</a>')
+                     f'{_L(lang, "English", "Chinese")}</a>')
     return (f'<aside class="sidebar"><a class="brand" href="{base}index.html">{_logo(32)}'
-            f'<span><b>{esc(site["name"])}</b><small>{esc(subtitle)}</small></span></a>'
+            f'<span><b>{esc(brand_name(site, lang))}</b><small>{esc(subtitle)}</small></span></a>'
             f'<nav aria-label="{_L(lang, "主导航", "Main navigation")}"><div class="nav-sec"><h3>{_L(lang, "内容", "Content")}</h3>{links}</div>'
             f'<div class="nav-sec"><h3>{_L(lang, "更多", "More")}</h3>{more_links}'
             f'</div></nav>'
@@ -2326,7 +2332,7 @@ def rail_html(site, active, prefix="", base="", lang="zh", alt_href=None):
     links += (f'<a class="rail-link{" on" if active == "more" else ""}" href="{base}more.html">'
               f'{icon("user", 20)}<span>{_L(lang, "我的", "My")}</span></a>')
     # 语言切换只放侧栏左下角（.side-foot，与 GitHub 仓库同排），窄栏不再重复放。
-    return (f'<aside class="rail"><a class="brand" href="{base}index.html" aria-label="{_L(lang, esc(site["name"]) + " 首页", esc(site["name"]) + " home")}">'
+    return (f'<aside class="rail"><a class="brand" href="{base}index.html" aria-label="{_L(lang, esc(site["name"]) + " 首页", esc(brand_name(site, lang)) + " home")}">'
             f'{_logo(28)}</a><nav aria-label="{_L(lang, "主导航", "Main navigation")}">{links}</nav></aside>')
 
 
@@ -2351,7 +2357,7 @@ def topbar_html(site, active, prefix="", base="", lang="zh", alt_href=None):
                   f'<a class="{"on" if active == "featured" else ""}" href="{base}{root}">{_L(lang, "精选", "Featured")}</a>'
                   f'<a class="{"on" if active == "all" else ""}" href="{base}{all_page}">{_L(lang, "全部", "All")}</a></span>')
     # 语言切换只放侧栏左下角（.side-foot，与 GitHub 仓库同排），顶栏不再重复放。
-    return (f'<header class="topbar"><a class="brand" href="{base}index.html">{_logo(26)}<b>{site["name"]}</b></a>'
+    return (f'<header class="topbar"><a class="brand" href="{base}index.html">{_logo(26)}<b>{esc(brand_name(site, lang))}</b></a>'
             f'{center}{_theme_btn(lang)}</header>')
 
 
@@ -2373,7 +2379,7 @@ def tabbar_html(active, prefix="", base="", lang="zh"):
 
 
 def footer_html(site, base="", lang="zh"):
-    name = esc(site["name"])
+    name = esc(brand_name(site, lang))
     repo = esc(site.get("repo", ""))
     if lang == "en":
         p1 = (f"{name} is an aggregator and reading index. Titles and summaries "
@@ -2447,7 +2453,7 @@ def page_open(site, active, title, description, prefix="", base="", canonical=""
           f'<meta name="twitter:description" content="{esc(description)}">\n'
           f'<meta name="twitter:image" content="{site_url}/favicon.svg">\n')
     ld = {"@context": "https://schema.org", "@type": "WebSite",
-          "name": site["name"],
+          "name": brand_name(site, lang),
           "url": site_url + "/en/" if lang == "en" else site_url,
           "inLanguage": "en" if lang == "en" else "zh-CN",
           "description": (site.get("description_en") or site.get("description", ""))
@@ -2475,7 +2481,7 @@ def page_open(site, active, title, description, prefix="", base="", canonical=""
             f'<link rel="canonical" href="{esc(canon)}">\n'
             f"{hreflang}"
             f'<meta name="robots" content="index, follow, max-image-preview:large">\n'
-            f'<link rel="alternate" type="application/rss+xml" title="{esc(site["name"])}" href="{feed_href}">\n'
+            f'<link rel="alternate" type="application/rss+xml" title="{esc(brand_name(site, lang))}" href="{feed_href}">\n'
             f"{extra_head}"
             f'<link rel="icon" type="image/svg+xml" href="{base}favicon.svg">\n'
             f"{og}"
@@ -2713,8 +2719,8 @@ def render_index(site, cats, cfg, src_by_id, selected, hot, timeline, generated_
         "tierBonus": sc["tier_bonus"],
         "devBonus": sc["dev_keyword_bonus"],
         "devCap": sc["dev_keyword_cap"],
-        "devLabels": REASON_LABELS_EN if lang == "en" else REASON_LABELS,
-        "noiseKw": sc["noise_keywords"],
+        "devLabels": ({k: v for k, v in REASON_LABELS_EN.items() if k.isascii()} if lang == "en" else REASON_LABELS),
+        "noiseKw": ([kw for kw in sc["noise_keywords"] if kw.isascii()] if lang == "en" else sc["noise_keywords"]),
         "noisePenalty": sc["noise_keyword_penalty"],
         "noiseFloor": sc["noise_keyword_floor"],
         "tagSlugs": TAG_SLUGS_EN if lang == "en" else TAG_SLUGS,
@@ -2822,8 +2828,8 @@ def render_all(site, cats, cfg, src_by_id, selected, hot, pool, generated_at, la
         "tierBonus": sc["tier_bonus"],
         "devBonus": sc["dev_keyword_bonus"],
         "devCap": sc["dev_keyword_cap"],
-        "devLabels": REASON_LABELS_EN if lang == "en" else REASON_LABELS,
-        "noiseKw": sc["noise_keywords"],
+        "devLabels": ({k: v for k, v in REASON_LABELS_EN.items() if k.isascii()} if lang == "en" else REASON_LABELS),
+        "noiseKw": ([kw for kw in sc["noise_keywords"] if kw.isascii()] if lang == "en" else sc["noise_keywords"]),
         "noisePenalty": sc["noise_keyword_penalty"],
         "noiseFloor": sc["noise_keyword_floor"],
         "tagSlugs": TAG_SLUGS_EN if lang == "en" else TAG_SLUGS,
@@ -2935,13 +2941,13 @@ def render_period(site, kind, report, base="", prev=None, next_=None, canonical=
         f'<a href="{base}monthly.html">{_L(lang, "月报", "Monthly")}</a> · <a href="{base}daily/archive.html">{_L(lang, "往期存档", "Archive")}</a></p>')
     if rel_path is None:
         rel_path = kind + ".html"
-    brand = f'{esc(site["name"])} {name}' if lang == "en" else f'{esc(site["name"])}{name}'
+    brand = f'{esc(brand_name(site, lang))} {name}' if lang == "en" else f'{esc(brand_name(site, lang))}{name}'
     issue_txt = f'Issue No. {report["issue"]}' if lang == "en" else f'第 {report["issue"]} 期'
     meta = (f'{esc(report["date"])} {wd} · {sched_txt} · {len(items)} picks from the {window}'
             if lang == "en" else
             f'{esc(report["date"])} {wd} · {sched_txt} · {window}精选 {len(items)} 条')
-    page_title = (f'{site["name"]} {name} · {report["date"]}' if lang == "en"
-                  else f'{site["name"]}{name} · {report["date"]}')
+    page_title = (f'{brand_name(site, lang)} {name} · {report["date"]}' if lang == "en"
+                  else f'{brand_name(site, lang)}{name} · {report["date"]}')
     description = report.get("summary") or (site.get("description_en") or site["description"] if lang == "en" else site["description"])
     return (page_open(site, kind, page_title, description,
                       prefix="index.html", base=base,
@@ -3024,7 +3030,7 @@ def render_more(site, changelog_version, lang="zh"):
         f'<span class="m-arrow">›</span></a>')
     about_rows = (
         f'<a class="more-row" href="about.html">{icon("rss", 18)}'
-        f'<span class="m-label">{_L(lang, "关于 " + site["name"], "About " + site["name"])}</span><span class="m-arrow">›</span></a>'
+        f'<span class="m-label">{_L(lang, "关于 " + site["name"], "About " + brand_name(site, lang))}</span><span class="m-arrow">›</span></a>'
         f'<a class="more-row" href="changelog.html">{icon("doc", 18)}'
         f'<span class="m-label">{_L(lang, "更新日志", "Changelog")}</span>'
         f'<span class="dot-red" id="changelogDot" data-changelog-version="{esc(changelog_version)}" hidden></span>'
@@ -3087,7 +3093,7 @@ def render_changelog(site, entries, lang="zh"):
                       lang=lang, rel_path="changelog.html")
             + f'<div class="m-title">{_L(lang, "更新日志", "Changelog")}</div>'
             + f'<h1>{_L(lang, "更新日志", "Changelog")}</h1>'
-            + f'<p class="lede">{_L(lang, site["name"] + " 每次改版都记在这里。", "Every " + site["name"] + " change is recorded here.")}</p>'
+            + f'<p class="lede">{_L(lang, site["name"] + " 每次改版都记在这里。", "Every " + brand_name(site, lang) + " change is recorded here.")}</p>'
             + f'<div id="changelogPage" data-changelog-version="{esc(latest)}">{items_html}</div>'
             + page_close(site, "changelog", prefix="index.html", lang=lang))
 
@@ -3225,7 +3231,7 @@ def render_simple_page(site, active, title, lede, blocks, canonical_path, lang="
 def render_about(site, lang="zh"):
     """关于页：正文段落走 config.json 的 about_blocks / about_blocks_en
     （新站填自己的文案）；mcp_url 非空时追加 MCP 接入段（双语）。"""
-    name = site.get("name", "HOT")
+    name = brand_name(site, lang)
     mcp_url = site.get("mcp_url", "")
     if lang == "en":
         audience_en = site.get("audience_en", "")
@@ -3325,7 +3331,7 @@ def render_item(site, it, related, is_selected, daily_issue, lang="zh"):
          "dateModified": pub.astimezone(timezone.utc).isoformat(),
          "inLanguage": "en" if lang == "en" else "zh-CN",
          "author": {"@type": "Organization", "name": it["source"]},
-         "publisher": {"@type": "Organization", "name": site["name"]},
+         "publisher": {"@type": "Organization", "name": brand_name(site, lang)},
          "mainEntityOfPage": canonical},
         {"@context": "https://schema.org", "@type": "BreadcrumbList",
          "itemListElement": [
@@ -3370,8 +3376,8 @@ def render_item(site, it, related, is_selected, daily_issue, lang="zh"):
     pub_iso = pub.astimezone(timezone.utc).isoformat()
     article_head = (f'<meta property="article:published_time" content="{pub_iso}">\n'
                     f'<meta property="article:modified_time" content="{pub_iso}">\n'
-                    f'<meta property="article:author" content="{esc(site["name"])}">\n')
-    return (page_open(site, "all", f"{title} · {site['name']}", desc,
+                    f'<meta property="article:author" content="{esc(brand_name(site, lang))}">\n')
+    return (page_open(site, "all", f"{title} · {brand_name(site, lang)}", desc,
                       prefix="index.html", base="../", canonical=canonical,
                       page_cls=" page-reading", ld_blocks=ld_blocks,
                       og_type="article", extra_head=article_head,
@@ -3654,7 +3660,7 @@ def build_llms_txt(site, cats, today_iso, lang="zh"):
     mirror_url 为空时不写 Mirror 行。
     """
     site_url = site.get("url", "")
-    name = site.get("name", "")
+    name = brand_name(site, lang)
     mirror_url = (site.get("mirror_url") or "").rstrip("/")
     mcp_url = site.get("mcp_url") or ""
     edition_time = site.get("edition_time_cst", "06:00")
@@ -4331,10 +4337,15 @@ def main():
     # favicon 相同；赞赏二维码图片按 tips 配置原样复制（同一批图片）
     en_assets_dir = os.path.join(en_root, "assets")
     os.makedirs(en_assets_dir, exist_ok=True)
+    # English tree must contain zero Chinese characters, including in
+    # CSS/JS comments (visible pages are already English-only, but the
+    # shared CSS/JS carry Chinese comments). Strip block comments here.
+    _en_css = re.sub(r"/\*.*?\*/", "", CSS, flags=re.S)
+    _en_js = re.sub(r"/\*.*?\*/", "", script_js_en(site), flags=re.S)
     with open(os.path.join(en_assets_dir, "site.css"), "w", encoding="utf-8") as f:
-        f.write(CSS)
+        f.write(_en_css)
     with open(os.path.join(en_assets_dir, "site.js"), "w", encoding="utf-8") as f:
-        f.write(script_js_en(site))
+        f.write(_en_js)
     with open(os.path.join(en_root, "favicon.svg"), "w", encoding="utf-8") as f:
         f.write(LOGO_SVG)
     for _tip in (site.get("tips") or []):

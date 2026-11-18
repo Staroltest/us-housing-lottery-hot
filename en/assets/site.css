@@ -1,6 +1,5 @@
 
-/* 设计语言：暖纸底色、青色点缀、细线边框、无渐变；
-   侧栏导航、热点条、时间线时间轨、评分徽章均为其组件的静态化移植。品牌与 logo 由本站自己定义。 */
+
 :root{
   --bg:#faf9f6; --bg-sunk:#f3f3ef; --bg-muted:#e9ede9; --well:var(--bg-sunk);
   --surface:#fff; --surface-2:#fdfdfb; --sidebar:#fdfdfb; --daybar:#f0f2ee;
@@ -54,11 +53,11 @@ button{cursor:pointer;font:inherit}
 .num{font-variant-numeric:tabular-nums}
 .mono{font-family:ui-monospace,SFMono-Regular,"SF Mono",Menlo,Consolas,monospace;font-variant-numeric:tabular-nums}
 
-/* ---- 壳：侧栏 / 窄轨 / 主列 / 手机顶栏与底栏 ---- */
+
 .shell{display:flex;min-height:100dvh}
 .sidebar,aside.rail{display:none}
 .main{flex:1;min-width:0}
-/* 列表宽度：桌面撑满主列，上限 max(1200px, 270dvh-236px)，超宽屏再居中 */
+
 .page{max-width:640px;width:100%;margin:0 auto;padding:0 16px 96px}
 @media(min-width:700px){
   .page{max-width:var(--page-max-wide);padding:0 20px 48px}
@@ -102,7 +101,7 @@ button{cursor:pointer;font:inherit}
 .rail-link.on svg{color:var(--accent)}
 aside.rail .brand{margin-bottom:12px}
 
-/* 手机顶栏：品牌 + 精选|全部切换 + 外观按钮 */
+
 .topbar{position:sticky;top:0;z-index:30;display:flex;height:var(--bar-h);align-items:center;gap:8px;
   padding:0 8px;background:var(--bg);border-bottom:1px solid var(--line)}
 .topbar .brand b{font-size:17px}
@@ -115,16 +114,16 @@ aside.rail .brand{margin-bottom:12px}
 .icon-btn:hover{background:var(--bg-sunk);color:var(--ink)}
 .ic-sun,.ic-monitor{display:none}
 
-/* 手机底栏 */
+
 .tabbar{position:fixed;left:0;right:0;bottom:0;z-index:30;display:flex;background:var(--surface);
   border-top:1px solid var(--line);padding-bottom:env(safe-area-inset-bottom)}
 .tabbar a{flex:1;display:flex;flex-direction:column;align-items:center;gap:2px;padding:7px 0 6px;
   font-size:11px;font-weight:500;color:var(--ink-3)}
 .tabbar a.on{color:var(--accent);font-weight:600}
-/* 桌面（≥700px）只留侧栏/窄轨，手机顶栏与底栏隐藏（须放在基础规则之后，否则同优先级后规则覆盖） */
+
 @media(min-width:700px){.topbar,.tabbar{display:none}}
 
-/* ---- 通用组件 ---- */
+
 h1{font-size:24px;font-weight:600;line-height:1.3;margin:22px 0 0}
 h2.sec{font-size:19px;font-weight:600;margin:30px 0 12px}
 .lede{font-size:13px;color:var(--ink-4);margin:8px 0 0}
@@ -145,7 +144,7 @@ button.chip:hover{color:var(--accent);border-color:var(--line-strong)}
   transition:left 300ms cubic-bezier(.25,1,.5,1),width 300ms cubic-bezier(.25,1,.5,1)}
 [data-theme="dark"] .tabs-thumb{background:var(--raised)}
 [data-theme="dark"] .switch a.on{background:var(--raised)}
-/* 筛选行：左侧分类分段控件，右侧搜索框 */
+
 .filter-row{display:flex;flex-wrap:wrap;align-items:center;gap:12px;margin:16px 0 4px}
 .filter-row .tabs{max-width:100%}
 .search{position:relative;width:100%}
@@ -168,7 +167,7 @@ button.chip:hover{color:var(--accent);border-color:var(--line-strong)}
   font-family:ui-monospace,Menlo,Consolas,monospace;font-size:10.5px;line-height:16px;
   padding:0 6px;border:1px solid var(--line-strong);border-radius:5px;background:var(--surface);color:var(--ink-4)}
 @media(min-width:700px){.search:not(.has-value) kbd{display:block}}
-/* 只看未读：独立小开关（首个日期行右侧 / 手机单独一行） */
+
 .toggle-chip{display:inline-flex;min-height:28px;align-items:center;gap:6px;padding:0 12px;
   border-radius:9999px;border:1px solid var(--line-soft);background:var(--bg-sunk);
   font-size:12.5px;font-weight:500;color:var(--ink-3)}
@@ -180,7 +179,7 @@ button.chip:hover{color:var(--accent);border-color:var(--line-strong)}
 .well .kicker{font-size:12px;font-weight:600;color:var(--accent-ink)}
 .well p{margin:6px 0 0;font-size:14.5px;line-height:1.75;color:var(--ink-2)}
 
-/* 评分徽章（按档位着色的小药丸，85+ 红、70+ 青、其余安静） */
+
 .score-pill{display:inline-flex;height:20px;align-items:center;gap:6px;white-space:nowrap;
   border-radius:9999px;padding:0 8px;box-shadow:inset 0 0 0 1px var(--ring,rgba(0,0,0,0))}
 .score-pill .lbl{font-size:11px;font-weight:500;opacity:.8}
@@ -191,17 +190,17 @@ button.chip:hover{color:var(--accent);border-color:var(--line-strong)}
 .score-pill.t-acc{background:var(--accent-soft);color:var(--accent);--ring:color-mix(in srgb, var(--accent) 20%, transparent)}
 .score-pill.t-quiet{color:var(--ink-4);--ring:var(--line-soft)}
 @media(max-width:640px){.score-pill .lbl,.score-pill .sep{display:none}}
-/* 精选徽章：琥珀底 + 圆点（不是青色） */
+
 .pick{display:inline-flex;height:18px;align-items:center;gap:4px;padding:0 8px;border-radius:9999px;
   background:var(--amber-soft);color:var(--amber-ink);font-size:11px;font-weight:500}
 .pick::before{content:"";width:5px;height:5px;border-radius:9999px;background:currentColor}
-/* 当日新到徽章：趋势列的“新”样式 */
+
 .new-pill{display:inline-flex;height:18px;align-items:center;padding:0 6px;border-radius:9999px;
   background:var(--accent-soft);color:var(--accent);font-size:10.5px;font-weight:600;line-height:16px}
 .rank{font-weight:800;color:var(--rank-rest)}
 .rank.r1{color:var(--rank-1)}.rank.r2{color:var(--rank-2)}.rank.r3{color:var(--rank-3)}
 
-/* ---- 动态卡片（桌面白卡、手机行；来源行 + 标题 + 摘要 + 分类） ---- */
+
 .feed-item{padding:14px 0;border-bottom:1px solid var(--line-soft)}
 .feed-item:last-child{border-bottom:0}
 @media(min-width:700px){
@@ -231,7 +230,7 @@ button.chip:hover{color:var(--accent);border-color:var(--line-strong)}
 @media(min-width:700px){.feed-item .sum{-webkit-line-clamp:3;font-size:15px;line-height:1.75}}
 .fi-foot{margin-top:8px;display:flex;gap:8px;align-items:center}
 .fi-foot .when{font-size:12.5px;color:var(--ink-4)}
-/* 推荐理由：13px、注色，桌面加顶线与间距 */
+
 .fi-reason{margin-top:4px;font-size:13px;line-height:1.65;color:var(--note);
   display:-webkit-box;-webkit-line-clamp:1;-webkit-box-orient:vertical;overflow:hidden}
 @media(min-width:700px){
@@ -239,7 +238,7 @@ button.chip:hover{color:var(--accent);border-color:var(--line-strong)}
     -webkit-line-clamp:unset;line-height:1.75}
 }
 
-/* ---- 热点条（右上热色晕染 + 跳动 live 点 + 排名行） ---- */
+
 .hot-card{position:relative;overflow:hidden;margin:16px 0 0;padding:10px 14px 4px;
   background:radial-gradient(120% 90% at 100% 0%,var(--hot-soft),transparent 55%),var(--surface)}
 @media(min-width:700px){.hot-card{margin:18px 0 24px;padding:14px 20px 8px}}
@@ -267,10 +266,10 @@ button.chip:hover{color:var(--accent);border-color:var(--line-strong)}
 .hot-trend{display:flex;width:20px;justify-content:center;color:var(--ink-4)}
 .hot-trend .up{color:var(--hot)}
 .hot-trend .flat{color:var(--ink-4)}
-/* 手机只留前 3 名进榜，让动态流尽快出现在首屏 */
+
 @media(max-width:639px){.hot-top5 li:nth-child(n+4){display:none}}
 
-/* ---- 时间线（按天分组，桌面时间轨 + 青点，手机灰色日栏） ---- */
+
 .day-head{position:sticky;top:var(--bar-h);z-index:20;display:flex;height:44px;align-items:center;gap:8px;
   margin:0 -16px;padding:0 16px;background:var(--daybar)}
 .day-head .dh-name{font-size:14px;font-weight:700}
@@ -324,7 +323,7 @@ button.chip:hover{color:var(--accent);border-color:var(--line-strong)}
 .tip-qr{width:150px;height:150px;border-radius:8px;background:#fff}
 .tip-label{font-size:13px;color:var(--ink-3)}
 .tip-addr{font-size:12px;color:var(--ink-4);word-break:break-all;font-family:ui-monospace,SFMono-Regular,Menlo,monospace}
-/* 回到顶部：圆按钮，滚过一屏多再出现（仅桌面） */
+
 .to-top{position:fixed;right:max(24px,env(safe-area-inset-right));bottom:max(24px,env(safe-area-inset-bottom));
   z-index:30;display:none;width:44px;height:44px;align-items:center;justify-content:center;
   border-radius:9999px;border:1px solid var(--line);background:var(--surface);color:var(--ink-2);
@@ -333,26 +332,26 @@ button.chip:hover{color:var(--accent);border-color:var(--line-strong)}
 .to-top.show{opacity:1;transform:none;pointer-events:auto}
 .to-top:hover{color:var(--ink)}
 @media(min-width:700px){.to-top{display:flex}}
-/* 列表到底 */
+
 .feed-end{padding:24px 0;text-align:center;font-size:12px;color:var(--ink-4)}
-/* 日报名头：大字名 + 双线，照报纸的版头 */
+
 .masthead{margin-top:24px;padding-bottom:16px;border-bottom:3px double var(--line-strong)}
 .masthead .mp-brand{display:flex;align-items:center;gap:14px}
 .masthead .mp-meta{margin:10px 0 0;font-size:13px;color:var(--ink-4)}
 .masthead .mp-issue{display:inline-flex;height:20px;align-items:center;padding:0 8px;border-radius:9999px;
   background:var(--accent-soft);color:var(--accent-ink);font-size:12px;font-weight:600;margin-left:10px}
 
-/* ---- v9：视觉打磨与新页面（颜色 token 不动） ---- */
-/* A2：标题手机 2 行截断；摘要桌面上边距 8px；头部行手机 22px/6px */
+
+
 @media(max-width:699px){.feed-item h3{display:-webkit-box;-webkit-line-clamp:2;-webkit-box-orient:vertical;overflow:hidden}}
 @media(min-width:700px){.feed-item .sum{margin-top:8px}}
 @media(max-width:699px){.fi-head{min-height:22px;gap:6px}}
-/* A3：手机隐藏 h1，lede 只留“更新于 …” */
+
 @media(max-width:699px){h1{display:none}.lede-rest{display:none}}
-/* A4：手机大标题（与 A3 联动） */
+
 .m-title{display:none}
 @media(max-width:699px){.m-title{display:block;font-size:30px;font-weight:800;line-height:1.25;margin:18px 0 0}}
-/* A4：顶栏/底栏毛玻璃；顶栏滚动阴影 */
+
 .topbar{background:color-mix(in srgb, var(--bg) 85%, transparent);
   backdrop-filter:blur(20px) saturate(1.5);-webkit-backdrop-filter:blur(20px) saturate(1.5)}
 .topbar.scrolled{box-shadow:0 1px 0 var(--line),0 6px 16px rgba(28,39,51,.08)}
@@ -360,22 +359,22 @@ button.chip:hover{color:var(--accent);border-color:var(--line-strong)}
   backdrop-filter:blur(20px) saturate(1.5);-webkit-backdrop-filter:blur(20px) saturate(1.5)}
 .tabbar-in{display:flex;width:100%;max-width:640px;margin:0 auto}
 .tabbar-in a{flex:1}
-/* A6：圆点悬停放大；卡片按压态 */
+
 .slot .rail::after{transition:transform 300ms}
 .slot:hover .rail::after{transform:scale(1.15)}
 .feed-item:active{transform:scale(0.995)}
-/* A7：手机 chip 44px；热点条“完整榜单”整行 40px */
+
 @media(max-width:699px){.tabs .chip{height:44px}}
 .hot-more{display:flex;min-height:40px;align-items:center;justify-content:center;gap:6px;
   border-top:1px solid var(--line-soft);margin-top:6px;padding:0;font-size:13px;color:var(--ink-3)}
-/* A8：减弱动效时关掉动画 */
+
 @media (prefers-reduced-motion: reduce){
   *,*::before,*::after{animation-duration:.01ms !important;animation-iteration-count:1 !important;
     transition-duration:.01ms !important;scroll-behavior:auto !important}
 }
-/* A10：日报页用更窄的阅读宽度 */
+
 @media(min-width:700px){.page.page-reading{max-width:var(--page-max-reading)}}
-/* B1：热点榜头条大卡 / 次卡 / Delta / 方法说明 */
+
 .hot-hero{padding:18px 20px 16px;margin:16px 0 0}
 .hot-hero-top{display:flex;align-items:center;gap:8px;flex-wrap:wrap}
 .no-tag{font-family:ui-monospace,Menlo,Consolas,monospace;font-size:12px;font-weight:800;
@@ -414,7 +413,7 @@ button.chip:hover{color:var(--accent);border-color:var(--line-strong)}
 .hot-row .hot-delta{text-align:right}
 .hot-method{margin-top:20px}
 .hot-method p{margin:6px 0 0;font-size:13.5px;line-height:1.75;color:var(--ink-3)}
-/* B19：卡片式空状态 */
+
 .empty-state{margin:24px 0;padding:32px 20px;text-align:center;
   background:var(--surface);border:1px solid var(--line);border-radius:12px;box-shadow:var(--shadow-card)}
 .empty-icon{display:flex;justify-content:center;color:var(--ink-4);margin-bottom:12px}
@@ -426,7 +425,7 @@ button.chip:hover{color:var(--accent);border-color:var(--line-strong)}
 .empty-btn:hover{border-color:var(--accent);color:var(--accent)}
 .empty-btn.primary{background:var(--accent);border-color:transparent;color:var(--accent-contrast);font-weight:600}
 .empty-btn.primary:hover{color:var(--accent-contrast);opacity:.9}
-/* B14：手机搜索浮层（触发按钮只在手机显示） */
+
 .search-trigger{display:flex;width:100%;height:42px;align-items:center;gap:10px;padding:0 16px;
   border:0;border-radius:9999px;background:var(--well);box-shadow:inset 0 0 0 1px var(--line-soft);
   font-size:16px;color:var(--ink-4);text-align:left}
@@ -450,7 +449,7 @@ button.chip:hover{color:var(--accent);border-color:var(--line-strong)}
 .overlay-hot a{display:flex;gap:10px;align-items:baseline;padding:10px 0;font-size:14.5px;font-weight:600}
 .overlay-hot a:hover{color:var(--accent)}
 .overlay-hot .rank{flex-shrink:0}
-/* B15：三向主题切换（带滑动 thumb） */
+
 .theme-seg{position:relative;display:inline-flex;gap:2px;padding:3px;border-radius:9999px;
   background:var(--well);box-shadow:inset 0 0 0 1px var(--line-soft)}
 .theme-seg button{position:relative;z-index:1;display:inline-flex;height:36px;align-items:center;gap:6px;
@@ -460,7 +459,7 @@ button.chip:hover{color:var(--accent);border-color:var(--line-strong)}
   background:var(--surface);box-shadow:var(--shadow-thumb),inset 0 0 0 1px var(--line);
   transition:left 300ms cubic-bezier(.25,1,.5,1),width 300ms cubic-bezier(.25,1,.5,1)}
 [data-theme="dark"] .theme-seg-thumb{background:var(--raised)}
-/* B4/B6：我的页行 + 红点 */
+
 .more-sec{margin-top:24px}
 .more-sec h2{margin:0 0 8px;font-size:15px;font-weight:600}
 .more-row{display:flex;align-items:center;gap:12px;width:100%;min-height:52px;padding:10px 14px;
@@ -476,7 +475,7 @@ button.chip:hover{color:var(--accent);border-color:var(--line-strong)}
 .dot-red::after{content:"";width:8px;height:8px;border-radius:9999px;background:var(--hot)}
 .more-note{margin:10px 0 0;font-size:13px;line-height:1.7;color:var(--ink-4)}
 .more-note a{color:var(--accent);text-decoration:underline}
-/* B6/B8：更新日志与存档 */
+
 .cl-item{padding:16px 0;border-bottom:1px solid var(--line-soft)}
 .cl-item:last-child{border-bottom:0}
 .cl-item h3{margin:0;font-size:16px;font-weight:650}
@@ -492,17 +491,17 @@ button.chip:hover{color:var(--accent);border-color:var(--line-strong)}
 .arch-list .a-date{font-weight:600}
 .arch-list .a-issue{font-size:12.5px;color:var(--ink-4)}
 .arch-list .a-count{margin-left:auto;font-size:12.5px;color:var(--ink-4)}
-/* 日报上下期导航 */
+
 .daily-nav{display:flex;justify-content:space-between;gap:12px;margin-top:28px;padding-top:16px;border-top:1px solid var(--line)}
 .daily-nav a{display:inline-flex;align-items:center;gap:6px;font-size:14px;font-weight:500;color:var(--ink-2)}
 .daily-nav a:hover{color:var(--accent)}
 .daily-nav .dn-next{margin-left:auto}
-/* B3：收藏页下架条目置灰 */
+
 .starred-item.is-gone{opacity:.55}
 .starred-item .gone-tag{display:inline-flex;height:18px;align-items:center;padding:0 8px;border-radius:9999px;
   background:var(--bg-muted);color:var(--ink-4);font-size:11px;font-weight:500}
 .starred-item .starred-at{font-size:12.5px;color:var(--ink-4)}
-/* B13：同事件归组展开 */
+
 .slot .group-toggle{grid-column:3;justify-self:start;margin:2px 0 0;padding:4px 10px;border:1px solid var(--line-soft);
   border-radius:9999px;background:var(--bg-sunk);font-size:12.5px;color:var(--ink-3)}
 .slot .group-toggle:hover{color:var(--accent);border-color:var(--line-strong)}
@@ -513,12 +512,12 @@ button.chip:hover{color:var(--accent);border-color:var(--line-strong)}
 .group-extra-list a{font-size:13.5px;font-weight:500}
 .group-extra-list a:hover{color:var(--accent)}
 .group-extra-list .ge-time{margin-left:auto;font-size:12px;color:var(--ink-4);white-space:nowrap}
-/* B16：卡片标签 */
+
 .fi-tags{display:flex;flex-wrap:wrap;gap:6px;margin-top:8px}
 .fi-tags .tag{font-size:12px;color:var(--accent-ink);background:var(--accent-softer);
   border-radius:9999px;padding:2px 8px}
 .fi-tags .tag:hover{background:var(--accent-soft)}
-/* 详情页（items/:id）：阅读宽度 + 大标题 + 导读 + 操作行 */
+
 .item-back{display:inline-flex;align-items:center;gap:6px;margin:4px 0 14px;padding:6px 12px 6px 8px;
   border:1px solid var(--line-soft);border-radius:9999px;background:var(--surface);
   font-size:13.5px;color:var(--ink-3)}
@@ -549,7 +548,7 @@ button.chip:hover{color:var(--accent);border-color:var(--line-strong)}
 .item-related-list a:hover{color:var(--accent)}
 .item-related-list .rel-meta{font-size:12.5px;color:var(--ink-4)}
 @media(max-width:699px){.item-h1{font-size:26px}}
-/* B2：加载更多 */
+
 .load-more-wrap{text-align:center;padding:16px 0 4px}
 .load-more-btn{display:inline-flex;min-height:40px;align-items:center;gap:8px;padding:0 22px;
   border-radius:9999px;border:1px solid var(--line-strong);background:var(--surface);
@@ -560,14 +559,14 @@ button.chip:hover{color:var(--accent);border-color:var(--line-strong)}
   border-radius:9999px;animation:spin 0.8s linear infinite}
 @keyframes spin{to{transform:rotate(360deg)}}
 .load-more-state{margin:10px 0 0;font-size:12.5px;color:var(--ink-4)}
-/* B2/B17：搜索结果区 */
+
 .search-results-head{display:flex;align-items:baseline;gap:10px;margin:16px 0 4px}
 .search-results-head h2{margin:0;font-size:17px;font-weight:600}
 .search-results-head .sr-count{font-size:13px;color:var(--ink-4)}
-/* C3：页脚链接行 */
+
 .foot-links{display:flex;flex-wrap:wrap;gap:4px 16px;margin-top:4px;font-size:13px}
 .foot-links a{color:var(--ink-3)}
 .foot-links a:hover{color:var(--accent)}
-/* 官方标记：T1 信源卡片头部的小标签 */
+
 .off-tag{display:inline-flex;height:18px;align-items:center;padding:0 6px;border-radius:9999px;
   background:var(--accent-soft);color:var(--accent);font-size:11px;font-weight:600}

@@ -43,7 +43,7 @@ document.querySelectorAll('.theme-btn').forEach(function(b){b.addEventListener('
 document.querySelectorAll('.theme-seg button').forEach(function(b){b.addEventListener('click',function(){
   applyTheme(b.getAttribute('data-theme-opt'));
 });});
-/* 三向切换的滑动 thumb：量一下当前选中项的位置 */
+
 var themeSegEl=document.querySelector('.theme-seg');
 var themeThumb=document.getElementById('themeSegThumb');
 function moveThemeThumb(){
@@ -56,8 +56,7 @@ function moveThemeThumb(){
 window.addEventListener('resize',moveThemeThumb);
 window.addEventListener('load',moveThemeThumb);
 syncThemeUI();
-/* 已读：点开标题即记已读，标题变灰；星标：本地收藏，可再筛出来。
-   bindFeedItem 供动态加载的卡片复用（B2 分页/搜索结果）。 */
+
 function bindFeedItem(el){
   if(el.getAttribute('data-bound'))return;
   el.setAttribute('data-bound','1');
@@ -73,7 +72,7 @@ function bindFeedItem(el){
         star.classList.remove('on');star.setAttribute('aria-label','Save');star.title='Save';
       }else{
         starSet.add(id);
-        /* 收藏快照：标题/链接/来源/时间，供收藏页离线展示与下架置灰用 */
+        
         var a=el.querySelector('h3 a'),src=el.querySelector('.fi-head .src');
         starMeta[id]={title:a?a.textContent.trim():'',link:a?a.getAttribute('href'):'',
           source:src?src.textContent.trim():'',at:new Date().toISOString()};
@@ -88,7 +87,7 @@ function bindFeedItem(el){
   });
 }
 document.querySelectorAll('.feed-item').forEach(bindFeedItem);
-/* 筛选状态：分类 + 只看收藏 + 只看未读 + 搜索词，四者叠加 */
+
 var state={cat:'all',star:false,unread:false,q:''};
 function itemVisible(el){
   var id=el.getAttribute('data-id')||'';
@@ -104,8 +103,7 @@ function itemVisible(el){
   return true;
 }
 function applyFilters(){
-  /* 有搜索词时进入全量搜索模式（B2/B17）：对 data/days/ 30 天分块检索并排序，
-     隐藏正常的精选/热点/时间线，显示搜索结果区。 */
+  
   if(state.q){enterSearchMode();return;}
   exitSearchMode();
   var hot=document.getElementById('hot');
@@ -160,14 +158,14 @@ function setCat(f){
   });
   moveThumb();applyFilters();
 }
-/* 分类 chips：用事件委托，动态加载的卡片里的分类 chip 也能点（B2） */
+
 document.addEventListener('click',function(e){
   var b=e.target.closest('[data-filter]');
   if(!b)return;
-  if(b.closest('#searchOverlay'))return; /* 浮层里的 chips 有自己的处理 */
+  if(b.closest('#searchOverlay'))return; 
   setCat(b.getAttribute('data-filter'));
 });
-/* 分段控件的白色滑块：量一下当前选中项的位置，滑动过去 */
+
 var tabsEl=document.querySelector('.tabs');
 var thumb=document.getElementById('tabsThumb');
 function moveThumb(){
@@ -180,7 +178,7 @@ function moveThumb(){
 window.addEventListener('resize',moveThumb);
 window.addEventListener('load',moveThumb);
 moveThumb();
-/* 搜索：标题+摘要+来源即时过滤；“/” 聚焦；× 清空 */
+
 var searchInput=document.getElementById('siteSearch');
 if(searchInput){
   var box=searchInput.closest('.search');
@@ -197,7 +195,7 @@ if(searchInput){
     }
   });
 }
-/* 只看未读（桌面在首个日期行右侧，手机在单独一行） */
+
 document.querySelectorAll('.unread-toggle').forEach(function(b){
   b.addEventListener('click',function(){
     state.unread=!state.unread;
@@ -205,14 +203,14 @@ document.querySelectorAll('.unread-toggle').forEach(function(b){
     applyFilters();
   });
 });
-/* 日期折叠：事件委托，动态加载的日期区也能折（B2） */
+
 document.addEventListener('click',function(e){
   var b=e.target.closest('.dh-toggle');
   if(!b)return;
   var sec=b.closest('.day-sec');
   if(sec)sec.classList.toggle('collapsed');
 });
-/* 回到顶部 */
+
 var toTop=document.getElementById('toTop');
 if(toTop){
   toTop.addEventListener('click',function(){window.scrollTo({top:0,behavior:'smooth'});});
@@ -220,16 +218,16 @@ if(toTop){
     toTop.classList.toggle('show',window.scrollY>window.innerHeight*1.2);
   },{passive:true});
 }
-/* #starred 直达收藏视图（加载时与 hash 变化时都生效） */
+
 if(location.hash==='#starred'){setCat('starred');}
 window.addEventListener('hashchange',function(){
   if(location.hash==='#starred'){setCat('starred');}
 });
-/* 顶栏滚动阴影（A4）：滚出一点就加阴影 */
+
 var topbar=document.querySelector('.topbar');
 function syncTopbar(){if(topbar)topbar.classList.toggle('scrolled',window.scrollY>8);}
 window.addEventListener('scroll',syncTopbar,{passive:true});syncTopbar();
-/* 底栏点当前 tab：回顶；已在顶部则刷新（A5） */
+
 document.querySelectorAll('.tabbar a').forEach(function(a){
   if(!a.classList.contains('on'))return;
   a.addEventListener('click',function(e){
@@ -238,12 +236,12 @@ document.querySelectorAll('.tabbar a').forEach(function(a){
     else{window.scrollTo({top:0,behavior:'smooth'});}
   });
 });
-/* 收藏数量：侧栏/我的页/底栏都显示（B3/B4） */
+
 function updateStarCounts(){
   document.querySelectorAll('[data-star-count]').forEach(function(el){el.textContent=starSet.size?('('+starSet.size+')'):(el.getAttribute('data-star-count-empty')||'');});
 }
 updateStarCounts();
-/* 空状态操作按钮（B19）：清除筛选 / 去看精选（事件委托，搜索结果里的空状态也生效） */
+
 document.addEventListener('click',function(e){
   var b=e.target.closest('[data-empty-action]');
   if(!b)return;
@@ -261,7 +259,7 @@ document.addEventListener('click',function(e){
     else{var br=document.querySelector('.topbar .brand')||document.querySelector('.sidebar .brand');if(br)location.href=br.getAttribute('href');}
   }
 });
-/* 手机搜索浮层（B14）：全屏层 + 最近搜索 + 分类 chips + 热议 */
+
 var overlay=document.getElementById('searchOverlay');
 var overlayInput=document.getElementById('overlaySearch');
 function isMobile(){return window.matchMedia&&window.matchMedia('(max-width: 699px)').matches;}
@@ -325,7 +323,7 @@ if(clrRecent)clrRecent.addEventListener('click',function(){
 document.querySelectorAll('#searchOverlay [data-filter]').forEach(function(b){
   b.addEventListener('click',function(){setCat(b.getAttribute('data-filter'));closeOverlay();});
 });
-/* 我的页：收藏数量 + 更新日志红点（B4/B6） */
+
 (function(){
   var dot=document.getElementById('changelogDot');
   if(dot){
@@ -337,7 +335,7 @@ document.querySelectorAll('#searchOverlay [data-filter]').forEach(function(b){
   var mc=document.getElementById('moreStarCount');
   if(mc)mc.textContent=starSet.size?String(starSet.size):'0';
 })();
-/* 更新日志页：打开即记为已读（B6） */
+
 (function(){
   var pg=document.getElementById('changelogPage');
   if(pg){
@@ -345,9 +343,8 @@ document.querySelectorAll('#searchOverlay [data-filter]').forEach(function(b){
     if(v){try{localStorage.setItem(LS_CL_READ,v);}catch(e){}}
   }
 })();
-/* ============ 客户端数据层：按天分块（data/days/） ============ */
-/* 首页首屏由服务端渲染；浏览器只在需要时才按天取分块：分页一次取一天，
-   搜索与收藏页在用户操作时才并行取全部天（仍按天分块，不再拉 30 天单文件）。 */
+
+
 var dayIndexPromise=null;
 var dayCache={};
 function getDayIndex(){
@@ -368,7 +365,7 @@ function getDay(date){
   }).catch(function(e){delete dayCache[date];throw e;});
   return dayCache[date];
 }
-/* 全量：只在搜索 / 收藏页按需调用（并行取各天分块并缓存），首页加载时不调用 */
+
 function getStore(){
   return getDayIndex().then(function(days){
     return Promise.all(days.map(getDay));
@@ -378,7 +375,7 @@ function getStore(){
     return all.sort(function(a,b){return new Date(b.published)-new Date(a.published);});
   });
 }
-/* 收藏页：从本地快照渲染，查 data/days/ 分块判断是否下架（B3） */
+
 (function(){
   var list=document.getElementById('starList');
   if(!list)return;
@@ -423,15 +420,15 @@ function getStore(){
     if(empty)empty.hidden=false;
   });
 })();
-/* ============ B2 分页 + B17 全量搜索 + B18 滚动恢复 ============ */
+
 function escHtml(s){return String(s==null?'':s).replace(/&/g,'&amp;').replace(/</g,'&lt;').replace(/>/g,'&gt;').replace(/"/g,'&quot;');}
 var SEARCH_ICON_SVG='<svg width="40" height="40" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="11" cy="11" r="8"/><line x1="21" y1="21" x2="16.65" y2="16.65"/></svg>';
 var BOOKMARK_SVG='<svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M19 21l-7-5-7 5V5a2 2 0 0 1 2-2h10a2 2 0 0 1 2 2z"/></svg>';
 var CHEV_SVG='<svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><polyline points="6 9 12 15 18 9"/></svg>';
 var IH_CFG=null;
 try{var cfgEl=document.getElementById('ihConfig');if(cfgEl)IH_CFG=JSON.parse(cfgEl.textContent);}catch(e){IH_CFG=null;}
-/* getStore() 见上方的客户端数据层（按天分块取 data/days/）。 */
-/* 北京时间的年月日时分（用 UTC+8 换算，不依赖浏览器时区） */
+
+
 function cstParts(date){
   var c=new Date(date.getTime()+8*3600000);
   var p=function(n){return String(n).padStart(2,'0');};
@@ -445,7 +442,7 @@ function fmtCST(iso){
   var p=cstParts(new Date(iso));
   return ['Jan','Feb','Mar','Apr','May','Jun','Jul','Aug','Sep','Oct','Nov','Dec'][p.m-1]+' '+p.d+', '+p.hm;
 }
-/* 与 Python score()/reason_for() 同规则的客户端版（动态卡片用） */
+
 function computeMeta(it){
   var tier=it.tier||(IH_CFG?IH_CFG.tiers[it.source_id]:null)||'T2';
   var labels=it.tags||[];
@@ -612,7 +609,7 @@ function renderBatch(items){
   tl.querySelectorAll('.feed-item').forEach(bindFeedItem);
   applyFilters();
 }
-/* 分页状态机：加载态 / 失败重试 / 到底 */
+
 var lmState={loading:false,done:false};
 function setLoadMoreState(s){
   var btn=document.getElementById('loadMoreBtn'),st=document.getElementById('loadMoreState'),
@@ -623,7 +620,7 @@ function setLoadMoreState(s){
   else if(s==='done'){if(wrap)wrap.hidden=true;if(end)end.hidden=false;}
   else{btn.disabled=false;btn.textContent='Load more';if(st)st.textContent='';}
 }
-/* 分页：按天取分块，一天不够再取下一天，直到凑满 30 条未见过的卡片 */
+
 var lmDayIdx=0,lmBuffer=[];
 function loadMore(){
   if(lmState.loading||lmState.done||state.q)return Promise.resolve(false);
@@ -670,7 +667,7 @@ if(sentinel&&'IntersectionObserver' in window){
   },{rootMargin:'900px 0px'});
   io.observe(sentinel);
 }
-/* 全量搜索模式（B2/B17）：标题 > 摘要 > 来源，同级按时间倒序 */
+
 var searchMode=false;
 function enterSearchMode(){
   var sr=document.getElementById('searchResults');
@@ -739,7 +736,7 @@ function renderSearchResults(){
       +'<p class="empty-text">The data did not load. Refresh the page and try again.</p></div>';
   });
 }
-/* 滚动恢复（B18）：从详情页/热点页返回首页时恢复滚动位置与已加载批次数 */
+
 var SCROLL_KEY='us-housing-lottery-hot-scroll';
 function saveScrollState(){
   var tl=document.getElementById('timeline');
@@ -772,7 +769,7 @@ function maybeRestoreScroll(){
   })(true);
 }
 maybeRestoreScroll();
-/* 同事件归组展开（B13）：事件委托，动态加载的也生效 */
+
 document.addEventListener('click',function(e){
   var t=e.target.closest('.group-toggle');
   if(!t)return;
@@ -785,12 +782,12 @@ document.addEventListener('click',function(e){
   var n=extra.querySelectorAll('li').length;
   t.innerHTML=open?'Collapse <span aria-hidden="true">▴</span>':n+' more reports <span aria-hidden="true">▾</span>';
 });
-/* 浮层搜索框的清空按钮（B14） */
+
 var ovClear=document.getElementById('overlaySearchClear');
 if(ovClear)ovClear.addEventListener('click',function(){
   if(overlayInput){overlayInput.value='';overlayInput.dispatchEvent(new Event('input'));overlayInput.focus();}
 });
-/* 详情页（B20）：打开即记已读；收藏；返回；复制链接；分享 */
+
 (function(){
   var pg=document.querySelector('[data-item-id]');
   if(!pg)return;

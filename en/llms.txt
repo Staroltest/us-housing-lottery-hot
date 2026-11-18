@@ -1,7 +1,7 @@
-# 美国保障房抽签HOT
+# US Housing Lottery HOT
 
 > Catch new lotteries before the deadline: New York affordable-housing draws, updated daily.
-> 美国保障房抽签HOT is a daily curated digest. Every day it collects public news
+> US Housing Lottery HOT is a daily curated digest. Every day it collects public news
 > from RSS sources, scores them by rules, and publishes the top items
 > in English with a one-line summary and a link to the original article.
 > It does not republish full text.
