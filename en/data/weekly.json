@@ -2,10 +2,10 @@
  "kind": "weekly",
  "key": "2026-W47",
  "label": "Week 47, 2026",
- "date": "November 18, 2026",
- "date_iso": "2026-11-18",
+ "date": "November 19, 2026",
+ "date_iso": "2026-11-19",
  "issue": 1,
- "generated_at": "2026-11-18T04:29:23.759499+00:00",
+ "generated_at": "2026-11-18T22:05:12.031375+00:00",
  "summary": "56 items collected in the past 7 days, 10 picks (Closing Soon 10). Headline: Brooklyn lottery ends today: 16 affordable rentals, mostly two-bedrooms.",
  "items": [
   {
@@ -26,12 +26,12 @@
     "Affordable housing"
    ],
    "score": 100,
-   "reason": "Official source · Covers Brooklyn and Lottery · Published within 6 hours",
-   "is_new": true,
+   "reason": "Official source · Covers Brooklyn and Lottery · Published within 24 hours",
+   "is_new": false,
    "trend": "same",
-   "hot_score": 100.0,
-   "prev_rank": 1,
-   "prev_hot_score": 100.0
+   "hot_score": 94.5,
+   "prev_rank": null,
+   "prev_hot_score": null
   },
   {
    "id": "8bc932434021bb32fdfb597c5f058d4c48347df9",
@@ -51,12 +51,12 @@
     "Affordable housing"
    ],
    "score": 100,
-   "reason": "Official source · Covers Brooklyn and Lottery · Published within 6 hours",
-   "is_new": true,
+   "reason": "Official source · Covers Brooklyn and Lottery · Published within 24 hours",
+   "is_new": false,
    "trend": "same",
-   "hot_score": 100.0,
-   "prev_rank": 2,
-   "prev_hot_score": 100.0
+   "hot_score": 94.5,
+   "prev_rank": null,
+   "prev_hot_score": null
   },
   {
    "id": "cf7a1a8a8596a2597e53182f9b4a0da6ba946fdc",
@@ -76,12 +76,12 @@
     "Affordable housing"
    ],
    "score": 100,
-   "reason": "Official source · Covers Bronx and Lottery · Published within 6 hours",
-   "is_new": true,
+   "reason": "Official source · Covers Bronx and Lottery · Published within 24 hours",
+   "is_new": false,
    "trend": "same",
-   "hot_score": 100.0,
-   "prev_rank": 3,
-   "prev_hot_score": 100.0
+   "hot_score": 94.5,
+   "prev_rank": null,
+   "prev_hot_score": null
   },
   {
    "id": "2eab0d349d53767924b0e91da5064db20219ea3f",
@@ -102,10 +102,10 @@
    ],
    "score": 100,
    "reason": "Official source · Covers Bronx and Lottery · Published within 6 hours",
-   "is_new": true,
+   "is_new": false,
    "trend": "same",
    "hot_score": 100.0,
-   "prev_rank": 4,
+   "prev_rank": 1,
    "prev_hot_score": 100.0
   },
   {
@@ -127,10 +127,10 @@
    ],
    "score": 100,
    "reason": "Official source · Covers Queens and Lottery · Published within 6 hours",
-   "is_new": true,
+   "is_new": false,
    "trend": "same",
    "hot_score": 100.0,
-   "prev_rank": 5,
+   "prev_rank": 2,
    "prev_hot_score": 100.0
   },
   {
@@ -152,10 +152,10 @@
    ],
    "score": 100,
    "reason": "Official source · Covers Queens and Lottery · Published within 6 hours",
-   "is_new": true,
+   "is_new": false,
    "trend": "same",
    "hot_score": 100.0,
-   "prev_rank": 6,
+   "prev_rank": 3,
    "prev_hot_score": 100.0
   },
   {
@@ -177,10 +177,10 @@
    ],
    "score": 100,
    "reason": "Official source · Covers Brooklyn and Lottery · Published within 6 hours",
-   "is_new": true,
+   "is_new": false,
    "trend": "same",
    "hot_score": 100.0,
-   "prev_rank": 7,
+   "prev_rank": 4,
    "prev_hot_score": 100.0
   },
   {
@@ -202,10 +202,10 @@
    ],
    "score": 100,
    "reason": "Official source · Covers Brooklyn and Lottery · Published within 6 hours",
-   "is_new": true,
+   "is_new": false,
    "trend": "same",
    "hot_score": 100.0,
-   "prev_rank": 8,
+   "prev_rank": 5,
    "prev_hot_score": 100.0
   },
   {
@@ -227,10 +227,10 @@
    ],
    "score": 100,
    "reason": "Official source · Covers Lottery and Affordable housing · Published within 6 hours",
-   "is_new": true,
+   "is_new": false,
    "trend": "same",
    "hot_score": 100.0,
-   "prev_rank": 9,
+   "prev_rank": 6,
    "prev_hot_score": 100.0
   },
   {
@@ -252,10 +252,10 @@
    ],
    "score": 100,
    "reason": "Official source · Covers Queens and Lottery · Published within 6 hours",
-   "is_new": true,
+   "is_new": false,
    "trend": "same",
    "hot_score": 100.0,
-   "prev_rank": 10,
+   "prev_rank": 7,
    "prev_hot_score": 100.0
   }
  ]
