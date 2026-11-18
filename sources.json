@@ -53,6 +53,17 @@
       "name": "Boston Metrolist",
       "tier": "T1",
       "url": "https://www.boston.gov/metrolist/api/v1/developments?_format=json"
+    },
+    {
+      "adapter": "bloom_api",
+      "category_hint": "open",
+      "city_short": "Bay Area",
+      "comment": "2026-11-19 实测：湾区 Doorway 门户，旧域名 housing.bayareametro.gov 已无法解析，现用 housingbayarea.mtc.ca.gov；/listings 页 SSR 只返回空 openListings，须走 /api/adapter/listings（filter[0][$comparison]==&filter[0][status]=active），active 25 条全带真实未来截止日；只收 lottery/firstComeFirstServe 且 unitsAvailable>0、非 1 月 1 日占位截止日的条目，当天 12 条（lottery 4 + first 8，覆盖奥克兰、都柏林、南旧金山等 10 城）；waitlist/waitlistLottery 11 条不收；浏览器访问会被 CloudFront 按国家拦截，但服务器端直连 200。",
+      "id": "bay-area-doorway",
+      "listing_base": "https://housingbayarea.mtc.ca.gov/listing",
+      "name": "Bay Area Doorway Housing Portal",
+      "tier": "T1",
+      "url": "https://housingbayarea.mtc.ca.gov/api/adapter/listings"
     }
   ]
 }

@@ -4099,6 +4099,12 @@ def main():
                 # 门户 SSR 页内嵌的 openListings -> 条目，不是 RSS。
                 from fetch_bloom import fetch_bloom_items
                 new_items = fetch_bloom_items(src, now)
+            elif src.get("adapter") == "bloom_api":
+                # Bloom API 适配器（tools/fetch_bloom_api.py）：湾区 Doorway
+                # 门户 /api/adapter/listings 公开 JSON -> 条目；该站 SSR 页
+                # 只返回空 openListings，不能走 SSR 适配器。
+                from fetch_bloom_api import fetch_bloom_api_items
+                new_items = fetch_bloom_api_items(src, now)
             elif src.get("adapter") == "boston":
                 # Metrolist 适配器（tools/fetch_boston.py）：波士顿公开 JSON
                 # -> 条目，不是 RSS；内部 title 同样是事实标识串。
@@ -4114,7 +4120,7 @@ def main():
         for it in new_items:
             it["id"] = hashlib.sha1(norm_link(it["link"]).encode()).hexdigest()
             if it["id"] in history:
-                if src.get("adapter") in ("housing", "dahlia", "bloom", "boston"):
+                if src.get("adapter") in ("housing", "dahlia", "bloom", "bloom_api", "boston"):
                     # 抽签状态会变（正在开放 -> 即将截止 -> 过期）：
                     # 刷新可变事实，不动 fetched_at。
                     old = history[it["id"]]

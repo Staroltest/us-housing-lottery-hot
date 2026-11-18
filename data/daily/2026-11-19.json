@@ -5,8 +5,8 @@
  "date": "2026年11月19日",
  "date_iso": "2026-11-19",
  "issue": 2,
- "generated_at": "2026-11-18T22:05:12.031375+00:00",
- "summary": "过去 24 小时共收录 56 条动态，精选 10 条（即将截止 10 条）。头条：布鲁克林抽签今日截止：16套可负担出租房，多为两居。",
+ "generated_at": "2026-11-18T23:12:57.626442+00:00",
+ "summary": "过去 24 小时共收录 68 条动态，精选 10 条（即将截止 10 条）。头条：布鲁克林抽签今日截止：16套可负担出租房，多为两居。",
  "items": [
   {
    "id": "52c9cb6d6c5f88bc396f248854e1f56e2fc25265",
@@ -29,7 +29,7 @@
    "reason": "官方来源 · 涉及布鲁克林与抽签 · 24 小时内发布",
    "is_new": false,
    "trend": "same",
-   "hot_score": 94.5,
+   "hot_score": 93.5,
    "prev_rank": null,
    "prev_hot_score": null
   },
@@ -54,7 +54,7 @@
    "reason": "官方来源 · 涉及布鲁克林与抽签 · 24 小时内发布",
    "is_new": false,
    "trend": "same",
-   "hot_score": 94.5,
+   "hot_score": 93.5,
    "prev_rank": null,
    "prev_hot_score": null
   },
@@ -79,7 +79,7 @@
    "reason": "官方来源 · 涉及布朗克斯与抽签 · 24 小时内发布",
    "is_new": false,
    "trend": "same",
-   "hot_score": 94.5,
+   "hot_score": 93.5,
    "prev_rank": null,
    "prev_hot_score": null
   },
