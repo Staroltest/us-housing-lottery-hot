@@ -8,7 +8,7 @@
 > Site: https://Staroltest.github.io/us-housing-lottery-hot/en/
 > Mirror: https://us-housing-lottery-hot.pages.dev/en/
 > Language: English (en). The Chinese version lives at the site root.
-> Updated: 2026-11-18
+> Updated: 2026-11-19
 
 ## About
 
