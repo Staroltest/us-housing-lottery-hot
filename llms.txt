@@ -6,6 +6,7 @@
 > in Chinese with a one-line summary and a link to the original article.
 > It does not republish full text.
 > Site: https://Staroltest.github.io/us-housing-lottery-hot/
+> Mirror: https://us-housing-lottery-hot.pages.dev/
 > Language: Chinese (zh-CN). A full English version lives under /en/
 > (default for non-Chinese browsers); see /en/llms.txt.
 > Updated: 2026-11-18
@@ -23,11 +24,16 @@
 - RSS feed: https://Staroltest.github.io/us-housing-lottery-hot/feed.xml
 - Sitemap: https://Staroltest.github.io/us-housing-lottery-hot/sitemap.xml
 
-## Machine-readable data
+## For AI clients (MCP)
 
-- https://Staroltest.github.io/us-housing-lottery-hot/data/hot.json
-- https://Staroltest.github.io/us-housing-lottery-hot/data/daily.json
-- https://Staroltest.github.io/us-housing-lottery-hot/data/days/index.json
+- MCP endpoint (Streamable HTTP, no key required):
+  https://us-housing-lottery-hot.pages.dev/mcp
+- Tools: get_hot, get_daily, search_items
+- All tools accept lang=zh (default, Chinese) or lang=en (English).
+- Machine-readable data:
+  https://Staroltest.github.io/us-housing-lottery-hot/data/hot.json
+  https://Staroltest.github.io/us-housing-lottery-hot/data/daily.json
+  https://Staroltest.github.io/us-housing-lottery-hot/data/days/index.json
 
 ## Categories
 

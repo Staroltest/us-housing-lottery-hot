@@ -1,5 +1,6 @@
 # 美国保障房抽签HOT — 允许搜索引擎与 AI 爬虫抓取公开内容
 # 规范域名为 https://Staroltest.github.io/us-housing-lottery-hot/
+# 镜像 https://us-housing-lottery-hot.pages.dev 内容相同，请以规范域名为准
 # 给 AI 看的站点说明见 llms.txt（站根 /llms.txt）
 
 User-agent: *

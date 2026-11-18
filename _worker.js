@@ -3,7 +3,10 @@
 // 单文件、无依赖：由部署脚本以 `_worker.js` 表单字段随部署上传，不作为
 // 静态资源。`_routes.json` 只把 /mcp 交给它，其余路径仍走静态托管。
 //
-// 搭建新站时改下面三个常量：SITE_ORIGIN（新站的 GitHub Pages 地址）、
+// 搭建新站时改下面三个常量：SITE_ORIGIN（数据来源站：正常是新站的
+// GitHub Pages 地址；GitHub Pages 未开通前暂指 Cloudflare 镜像
+// https://us-housing-lottery-hot.pages.dev，Pages 开通后改回
+// https://Staroltest.github.io/us-housing-lottery-hot）、
 // SERVER_NAME（MCP 服务名，一般取站点的 slug）。
 // 协议：MCP Streamable HTTP，无状态（无会话、无 SSE 流）。
 // 数据来自本站公开 JSON，只返回标题 + 一句简介 + 原文链接。
@@ -12,7 +15,7 @@
 // lang=en 读 /en/data/ 树，取 en_title/en_oneliner（由本站中文简介译出，
 // 绝非源站摘要）；中文树不带 en_* 字段，所以两种语言必须读不同路径。
 
-const SITE_ORIGIN = "https://Staroltest.github.io/us-housing-lottery-hot";
+const SITE_ORIGIN = "https://us-housing-lottery-hot.pages.dev";
 const SERVER_NAME = "us-housing-lottery-hot";
 const SERVER_INFO = { name: SERVER_NAME, version: "1.1.0" };
 const KNOWN_PROTOCOLS = ["2025-06-18", "2025-03-26", "2024-11-05"];

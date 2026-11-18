@@ -51,9 +51,9 @@
 - `published` 取截止日 23:59（本站时区口径）：对日历站，决定一条
   抽签是否“还活着”的是截止日；过了截止日的抽签自然掉出精选与热点，
   30 天后出全部动态。
-- 赞赏码：`site.tips` 为空，模板自带的他人收款二维码已从 `assets/`
-  删除。用户确认自己的加密钱包收款地址后，再按 `config.json` 的
-  `site.tips` 格式补上。
+- 赞赏码：已按用户提供的地址配置——USDT · TRC20（`assets/tip-usdt.png`）
+  与 USDT · Solana（`assets/tip-usdt-sol.png`），中英文页脚与关于页
+  均展示同一组地址与二维码。
 
 ## 本地运行
 
@@ -68,15 +68,32 @@ python3 tools/geo_audit.py           # 只做自检
 推送不走 git（本机无 `~/.git-credentials`，PAT 只覆盖 api.github.com）：
 用 GitHub Contents / Git Data API 推，见 `docs/` 里的半小时任务模板。
 
+## 线上状态（2026-11-18）
+
+- Cloudflare Pages 已上线：https://us-housing-lottery-hot.pages.dev
+  （项目 `us-housing-lottery-hot`，直接上传部署，MCP `/mcp` 已通）。
+- `_worker.js` 的 `SITE_ORIGIN` 暂指 Cloudflare 镜像（同上），因为
+  GitHub Pages 尚未开通、worker 从 GitHub Pages 取不到数据；Pages
+  开通后把 `SITE_ORIGIN` 改回
+  `https://Staroltest.github.io/us-housing-lottery-hot` 并重新部署一次。
+- 部署工具：`~/workspace/custom-connectors/custom.cloudflare/bin/cf.py`
+ （直接上传 API：GET upload-token → check-missing → upload →
+  upsert-hashes → multipart 创建 deployment；asset hash 为
+  `blake3(base64 + 扩展名)` 前 32 位 hex，`blake3` 模块在
+  `~/workspace/hot-work/vendor/`）。
+- 推送工具：`~/workspace/hot-work/push_github_api.py`（Git Data API
+  单 commit；本机不走 git push）。
+
 ## 待办（v1 未完成）
 
 - GitHub Pages：在仓库 Settings → Pages 开 main / root（PAT 无
-  Administration 权限，需浏览器/用户操作）。
-- Cloudflare Pages 镜像：项目 `us-housing-lottery-hot`；本机没有
-  `custom.cloudflare/bin/cf.py`，需走 Cloudflare Pages 直接上传 API。
+  Administration 权限，需浏览器/用户操作）。开通后把 `_worker.js` 的
+  `SITE_ORIGIN` 改回 GitHub Pages 地址并重新部署。
 - Cloudflare Web Analytics：镜像上线后在后台给该项目开 Web Analytics，
-  把 beacon token 填进 `config.json` 的 `site.web_analytics_token`。
-- 赞赏码：等用户给加密钱包收款地址。
+  把 beacon token 填进 `config.json` 的 `site.web_analytics_token`；
+  打开后流量监控在后台 Workers & Pages → 该项目 → Metrics/Analytics 看。
+  （token 需在后台生成，不要编造。）
+- 两个定时任务（半小时更新、每日把关）待建：见 `docs/` 下的两个模板。
 
 ## 许可
 

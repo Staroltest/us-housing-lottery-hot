@@ -24,7 +24,7 @@
    "key": "llms",
    "label": "llms.txt 存在",
    "status": "pass",
-   "detail": "中英 llms.txt 已生成，含数据 JSON 入口（未配置 MCP 端点）"
+   "detail": "中英 llms.txt 已生成，含 MCP 端点与数据 JSON 入口"
   },
   {
    "key": "canonical",
@@ -48,13 +48,13 @@
    "key": "mcp",
    "label": "MCP 端点可达性",
    "status": "warn",
-   "detail": "未配置 MCP 端点（site.mcp_url 为空），llms.txt 不含 MCP 段"
+   "detail": "端点 https://us-housing-lottery-hot.pages.dev/mcp 已写入 llms.txt；本轮未做在线请求，可达性需线上验证"
   },
   {
    "key": "mirror",
    "label": "镜像站部署",
    "status": "warn",
-   "detail": "未配置镜像（site.mirror_url 为空），跳过此项"
+   "detail": "镜像 https://us-housing-lottery-hot.pages.dev 的部署状态在仓库内无法验证，请以托管平台控制台最新部署为准"
   },
   {
    "key": "feed",
