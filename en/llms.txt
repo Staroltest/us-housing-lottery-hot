@@ -1,6 +1,6 @@
 # US Housing Lottery HOT
 
-> Catch new lotteries before the deadline: New York affordable-housing draws, updated daily.
+> Catch new lotteries before the deadline: affordable-housing draws in major US cities, updated daily.
 > US Housing Lottery HOT is a daily curated digest. Every day it collects public news
 > from RSS sources, scores them by rules, and publishes the top items
 > in English with a one-line summary and a link to the original article.

@@ -1,1 +1,58 @@
-{"comment":"格式：每条 {id, name, tier, url, category_hint, adapter}。tier: T1 官方一手。2026-11-18 实测：Socrata 数据集 vy5i-a666（Advertised Lotteries on Housing Connect by Lottery）公开 JSON，lottery_status 分组计数 Active 47；但 Active 是状态字段、不是日期过滤，其中很多行的 lottery_end_date 已过期，适配器只收 start<=今天<=end 的真正开放抽签，2026-11-18 当天为 15 条。首版只做 NYC，不编造其它城市信源。category_hint 须是 config.json 里 categories 的 key；adapter=housing 时由 tools/fetch_housing.py 拉取，不是 RSS。","sources":[{"adapter":"housing","category_hint":"open","comment":"2026-11-18 实测：Active 47，日期过滤后真正开放 15 条。","id":"nyc-housing-connect-open-data","name":"NYC Open Data: Housing Connect Lotteries","tier":"T1","url":"https://data.cityofnewyork.us/resource/vy5i-a666.json"}]}
+{
+  "comment": "格式：每条 {id, name, tier, url, category_hint, adapter}。tier: T1 官方一手。2026-11-18 实测：Socrata 数据集 vy5i-a666（Advertised Lotteries on Housing Connect by Lottery）公开 JSON，lottery_status 分组计数 Active 47；但 Active 是状态字段、不是日期过滤，其中很多行的 lottery_end_date 已过期，适配器只收 start<=今天<=end 的真正开放抽签，2026-11-18 当天为 15 条。首版只做 NYC，不编造其它城市信源。category_hint 须是 config.json 里 categories 的 key；adapter=housing 时由 tools/fetch_housing.py 拉取，不是 RSS。 旧金山 DAHLIA（sf-dahlia-listings）2026-11-18 加入：公开 JSON，114 条，日期+租期过滤后开放出租 4 条。",
+  "sources": [
+    {
+      "adapter": "housing",
+      "category_hint": "open",
+      "comment": "2026-11-18 实测：Active 47，日期过滤后真正开放 15 条。",
+      "id": "nyc-housing-connect-open-data",
+      "name": "NYC Open Data: Housing Connect Lotteries",
+      "tier": "T1",
+      "url": "https://data.cityofnewyork.us/resource/vy5i-a666.json"
+    },
+    {
+      "adapter": "dahlia",
+      "category_hint": "open",
+      "comment": "2026-11-18 实测：公开 JSON 200，114 条，Status=Active 65 条；只收出租（Tenure Re-rental/New rental）、Active、截止日>=今天，当天开放出租 4 条（卖房 5 条已排除）。",
+      "id": "sf-dahlia-listings",
+      "name": "San Francisco DAHLIA Listings",
+      "tier": "T1",
+      "url": "https://housing.sfgov.org/api/v1/listings.json"
+    },
+    {
+      "adapter": "bloom",
+      "category_hint": "open",
+      "city": "Los Angeles",
+      "city_short": "LA",
+      "comment": "2026-11-18 实测：200，分页 27 页共 267 条在开；__NEXT_DATA__ 内嵌 openListings，带截止日/套数/reviewOrderType；只收 lottery/firstComeFirstServe 且有真实截止日、unitsAvailable>0 的条目。",
+      "id": "la-access-housing",
+      "listing_base": "https://access.housing.lacity.gov/listing",
+      "name": "Los Angeles Access Housing LA",
+      "tier": "T1",
+      "url": "https://access.housing.lacity.gov/listings"
+    },
+    {
+      "adapter": "bloom",
+      "category_hint": "open",
+      "city": "San Jose",
+      "city_short": "SJ",
+      "comment": "2026-11-18 实测：200，单页 48 条在开，同 Bloom 格式；无 lottery 类型，只有 firstComeFirstServe/waitlist；1月1日与一年以上截止日为占位，适配器会滤掉。",
+      "id": "sj-housing-portal",
+      "listing_base": "https://housing.sanjoseca.gov/listing",
+      "name": "San Jose Housing Portal",
+      "tier": "T1",
+      "url": "https://housing.sanjoseca.gov/listings"
+    },
+    {
+      "adapter": "boston",
+      "category_hint": "open",
+      "city": "Boston",
+      "city_short": "BOS",
+      "comment": "2026-11-18 实测：公开 JSON 200，142 条（/metrolist/api/v1/developments?_format=json，从搜索页 JS 包找到的端点）；只收 offer=rent 且 assignment=lottery/first、截止日>=今天、套数>0 的条目，当天 20 条（lottery 7 + first 13，共 220 套）；等候名单 waitlist 不收（84 条有未来截止日，但拼排位、等以年计，与抽签日历定位不符）；官方链接 https://www.boston.gov/metrolist/search/housing/{slug}。",
+      "id": "boston-metrolist",
+      "name": "Boston Metrolist",
+      "tier": "T1",
+      "url": "https://www.boston.gov/metrolist/api/v1/developments?_format=json"
+    }
+  ]
+}
