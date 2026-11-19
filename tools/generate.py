@@ -3856,6 +3856,9 @@ def build_geo_audit(site, root, site_url, today_iso):
     for _base, _dirs, _files in os.walk(root):
         rel = os.path.relpath(_base, root)
         for _fn in _files:
+            # 根目录的搜索引擎验证文件（如 google*.html）不是内容页，不入 sitemap
+            if rel == "." and _fn.startswith("google") and _fn.endswith(".html"):
+                continue
             if _fn.endswith(".html") and _fn != "404.html":
                 p = _fn if rel == "." else f"{rel}/{_fn}"
                 html_files.add(p)
