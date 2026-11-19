@@ -2,87 +2,12 @@
  "kind": "monthly",
  "key": "2026-11",
  "label": "2026年11月",
- "date": "2026年11月19日",
- "date_iso": "2026-11-19",
+ "date": "2026年11月20日",
+ "date_iso": "2026-11-20",
  "issue": 1,
- "generated_at": "2026-11-18T23:12:57.626442+00:00",
- "summary": "过去 30 天共收录 68 条动态，精选 10 条（即将截止 10 条）。头条：布鲁克林抽签今日截止：16套可负担出租房，多为两居。",
+ "generated_at": "2026-11-19T22:04:58.412439+00:00",
+ "summary": "过去 30 天共收录 69 条动态，精选 10 条（即将截止 9 条、正在开放 1 条）。头条：布朗克斯抽签明日截止：17套可负担出租房，全是低收入档。",
  "items": [
-  {
-   "id": "52c9cb6d6c5f88bc396f248854e1f56e2fc25265",
-   "title": "Lottery #7626 · Brooklyn · 16 units · deadline 2026-11-18",
-   "link": "https://housingconnect.nyc.gov/PublicWeb/details/7626",
-   "source": "NYC Open Data: Housing Connect Lotteries",
-   "source_id": "nyc-housing-connect-open-data",
-   "published": "2026-11-18T15:59:00+00:00",
-   "zh_title": "布鲁克林抽签今日截止：16套可负担出租房，多为两居",
-   "zh_oneliner": "今天就是最后一天：布鲁克林这处 16 套可负担出租房里 14 套是两居，适合带孩子的家庭，先对一下收入档再提交，别等到今晚才动手。",
-   "category": "closing-soon",
-   "category_label": "即将截止",
-   "tier": "T1",
-   "tags": [
-    "布鲁克林",
-    "抽签",
-    "可负担住房"
-   ],
-   "score": 100,
-   "reason": "官方来源 · 涉及布鲁克林与抽签 · 24 小时内发布",
-   "is_new": false,
-   "trend": "same",
-   "hot_score": 93.5,
-   "prev_rank": null,
-   "prev_hot_score": null
-  },
-  {
-   "id": "8bc932434021bb32fdfb597c5f058d4c48347df9",
-   "title": "Lottery #7637 · Brooklyn · 19 units · deadline 2026-11-18",
-   "link": "https://housingconnect.nyc.gov/PublicWeb/details/7637",
-   "source": "NYC Open Data: Housing Connect Lotteries",
-   "source_id": "nyc-housing-connect-open-data",
-   "published": "2026-11-18T15:59:00+00:00",
-   "zh_title": "布鲁克林抽签今日截止：19套可负担出租房，开间到三居都有",
-   "zh_oneliner": "同样今天截止：布鲁克林这处 19 套房从开间到三居都有，单身和大家庭都能找到对应的户型，少见的搭配，可惜窗口今晚就关了。",
-   "category": "closing-soon",
-   "category_label": "即将截止",
-   "tier": "T1",
-   "tags": [
-    "布鲁克林",
-    "抽签",
-    "可负担住房"
-   ],
-   "score": 100,
-   "reason": "官方来源 · 涉及布鲁克林与抽签 · 24 小时内发布",
-   "is_new": false,
-   "trend": "same",
-   "hot_score": 93.5,
-   "prev_rank": null,
-   "prev_hot_score": null
-  },
-  {
-   "id": "cf7a1a8a8596a2597e53182f9b4a0da6ba946fdc",
-   "title": "Lottery #7625 · Bronx · 30 units · deadline 2026-11-18",
-   "link": "https://housingconnect.nyc.gov/PublicWeb/details/7625",
-   "source": "NYC Open Data: Housing Connect Lotteries",
-   "source_id": "nyc-housing-connect-open-data",
-   "published": "2026-11-18T15:59:00+00:00",
-   "zh_title": "布朗克斯抽签今日截止：30套可负担出租房，含极低收入档",
-   "zh_oneliner": "今天截止、值得一看：布朗克斯 30 套房里有极低收入和很低收入档的名额，这类档位一次放出这么多并不常见，符合条件的别错过今天。",
-   "category": "closing-soon",
-   "category_label": "即将截止",
-   "tier": "T1",
-   "tags": [
-    "布朗克斯",
-    "抽签",
-    "可负担住房"
-   ],
-   "score": 100,
-   "reason": "官方来源 · 涉及布朗克斯与抽签 · 24 小时内发布",
-   "is_new": false,
-   "trend": "same",
-   "hot_score": 93.5,
-   "prev_rank": null,
-   "prev_hot_score": null
-  },
   {
    "id": "2eab0d349d53767924b0e91da5064db20219ea3f",
    "title": "Lottery #7670 · Bronx · 17 units · deadline 2026-11-19",
@@ -101,12 +26,12 @@
     "可负担住房"
    ],
    "score": 100,
-   "reason": "官方来源 · 涉及布朗克斯与抽签 · 6 小时内发布",
+   "reason": "官方来源 · 涉及布朗克斯与抽签 · 24 小时内发布",
    "is_new": false,
    "trend": "same",
-   "hot_score": 100.0,
-   "prev_rank": 1,
-   "prev_hot_score": 100.0
+   "hot_score": 94.5,
+   "prev_rank": null,
+   "prev_hot_score": null
   },
   {
    "id": "f5040d33a9eaaf2377d4b07531b6fb1d5be52978",
@@ -126,12 +51,12 @@
     "可负担住房"
    ],
    "score": 100,
-   "reason": "官方来源 · 涉及皇后区与抽签 · 6 小时内发布",
+   "reason": "官方来源 · 涉及皇后区与抽签 · 24 小时内发布",
    "is_new": false,
    "trend": "same",
-   "hot_score": 100.0,
-   "prev_rank": 2,
-   "prev_hot_score": 100.0
+   "hot_score": 94.5,
+   "prev_rank": null,
+   "prev_hot_score": null
   },
   {
    "id": "74296392e0bcb714e5e7810e1a74e4b79a1f0bcb",
@@ -151,12 +76,12 @@
     "可负担住房"
    ],
    "score": 100,
-   "reason": "官方来源 · 涉及皇后区与抽签 · 6 小时内发布",
+   "reason": "官方来源 · 涉及皇后区与抽签 · 24 小时内发布",
    "is_new": false,
    "trend": "same",
-   "hot_score": 100.0,
-   "prev_rank": 3,
-   "prev_hot_score": 100.0
+   "hot_score": 94.5,
+   "prev_rank": null,
+   "prev_hot_score": null
   },
   {
    "id": "fbee6cd4776625bc03d12959c39eb543f354717f",
@@ -176,12 +101,12 @@
     "可负担住房"
    ],
    "score": 100,
-   "reason": "官方来源 · 涉及布鲁克林与抽签 · 6 小时内发布",
+   "reason": "官方来源 · 涉及布鲁克林与抽签 · 24 小时内发布",
    "is_new": false,
    "trend": "same",
-   "hot_score": 100.0,
-   "prev_rank": 4,
-   "prev_hot_score": 100.0
+   "hot_score": 94.5,
+   "prev_rank": null,
+   "prev_hot_score": null
   },
   {
    "id": "2b7ab21176aecd853a97e3067154ed96f121f632",
@@ -205,7 +130,7 @@
    "is_new": false,
    "trend": "same",
    "hot_score": 100.0,
-   "prev_rank": 5,
+   "prev_rank": 1,
    "prev_hot_score": 100.0
   },
   {
@@ -230,7 +155,7 @@
    "is_new": false,
    "trend": "same",
    "hot_score": 100.0,
-   "prev_rank": 6,
+   "prev_rank": 2,
    "prev_hot_score": 100.0
   },
   {
@@ -255,7 +180,82 @@
    "is_new": false,
    "trend": "same",
    "hot_score": 100.0,
-   "prev_rank": 7,
+   "prev_rank": 3,
+   "prev_hot_score": 100.0
+  },
+  {
+   "id": "23381dd52d2d07572829099113a8318b84caf587",
+   "title": "Lottery #7338 · Manhattan · 20 units · deadline 2026-11-20",
+   "link": "https://housingconnect.nyc.gov/PublicWeb/details/7338",
+   "source": "NYC Open Data: Housing Connect Lotteries",
+   "source_id": "nyc-housing-connect-open-data",
+   "published": "2026-11-20T15:59:00+00:00",
+   "zh_title": "曼哈顿抽签两天后截止：20套可负担出租房，面向中等收入",
+   "zh_oneliner": "曼哈顿还剩两天：20 套房面向中等收入，一居到三居都有，曼哈顿的盘本来就少，收入档对得上的家庭别放过这处。",
+   "category": "closing-soon",
+   "category_label": "即将截止",
+   "tier": "T1",
+   "tags": [
+    "曼哈顿",
+    "抽签",
+    "可负担住房"
+   ],
+   "score": 100,
+   "reason": "官方来源 · 涉及曼哈顿与抽签 · 6 小时内发布",
+   "is_new": false,
+   "trend": "same",
+   "hot_score": 100.0,
+   "prev_rank": 4,
+   "prev_hot_score": 100.0
+  },
+  {
+   "id": "4c92fcb14e8ea35c58c03b3b8ef9ead8f41b5c84",
+   "title": "Lottery #7729 · Bronx · 3 units · deadline 2026-11-20",
+   "link": "https://housingconnect.nyc.gov/PublicWeb/details/7729",
+   "source": "NYC Open Data: Housing Connect Lotteries",
+   "source_id": "nyc-housing-connect-open-data",
+   "published": "2026-11-20T15:59:00+00:00",
+   "zh_title": "布朗克斯抽签两天后截止：只有3套两居可负担出租房",
+   "zh_oneliner": "布朗克斯还剩两天：只有 3 套两居，全是低收入档，盘子太小，我的看法是当作顺手多报的一处，别当主力。",
+   "category": "closing-soon",
+   "category_label": "即将截止",
+   "tier": "T1",
+   "tags": [
+    "布朗克斯",
+    "抽签",
+    "可负担住房"
+   ],
+   "score": 100,
+   "reason": "官方来源 · 涉及布朗克斯与抽签 · 6 小时内发布",
+   "is_new": false,
+   "trend": "same",
+   "hot_score": 100.0,
+   "prev_rank": 5,
+   "prev_hot_score": 100.0
+  },
+  {
+   "id": "0caec92f40b839576bcc547fbdcfea69d37cec35",
+   "title": "Lottery #7728 · Bronx · 6 units · deadline 2026-11-23",
+   "link": "https://housingconnect.nyc.gov/PublicWeb/details/7728",
+   "source": "NYC Open Data: Housing Connect Lotteries",
+   "source_id": "nyc-housing-connect-open-data",
+   "published": "2026-11-23T15:59:00+00:00",
+   "zh_title": "布朗克斯抽签还剩五天：6套可负担出租房",
+   "zh_oneliner": "布朗克斯还剩五天：6 套低收入房，开间、一居、两居都有，今天不用抢，但最好定个提醒，五天过得很快。",
+   "category": "open",
+   "category_label": "正在开放",
+   "tier": "T1",
+   "tags": [
+    "布朗克斯",
+    "抽签",
+    "可负担住房"
+   ],
+   "score": 100,
+   "reason": "官方来源 · 涉及布朗克斯与抽签 · 6 小时内发布",
+   "is_new": false,
+   "trend": "same",
+   "hot_score": 100.0,
+   "prev_rank": 10,
    "prev_hot_score": 100.0
   }
  ]
