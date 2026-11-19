@@ -5,7 +5,7 @@
 > from RSS sources, scores them by rules, and publishes the top items
 > in Chinese with a one-line summary and a link to the original article.
 > It does not republish full text.
-> Site: https://Staroltest.github.io/us-housing-lottery-hot/
+> Site: https://us-housing-lottery-hot.pages.dev/
 > Mirror: https://us-housing-lottery-hot.pages.dev/
 > Language: Chinese (zh-CN). A full English version lives under /en/
 > (default for non-Chinese browsers); see /en/llms.txt.
@@ -13,16 +13,16 @@
 
 ## About
 
-- About: https://Staroltest.github.io/us-housing-lottery-hot/about.html
-- Topics: https://Staroltest.github.io/us-housing-lottery-hot/topics.html
-- Daily digest: https://Staroltest.github.io/us-housing-lottery-hot/daily.html
-- Hot list: https://Staroltest.github.io/us-housing-lottery-hot/hot.html
-- All items: https://Staroltest.github.io/us-housing-lottery-hot/all.html
-- English version: https://Staroltest.github.io/us-housing-lottery-hot/en/
-- English llms.txt: https://Staroltest.github.io/us-housing-lottery-hot/en/llms.txt
-- SEO/GEO self-check: https://Staroltest.github.io/us-housing-lottery-hot/geo-audit.html
-- RSS feed: https://Staroltest.github.io/us-housing-lottery-hot/feed.xml
-- Sitemap: https://Staroltest.github.io/us-housing-lottery-hot/sitemap.xml
+- About: https://us-housing-lottery-hot.pages.dev/about.html
+- Topics: https://us-housing-lottery-hot.pages.dev/topics.html
+- Daily digest: https://us-housing-lottery-hot.pages.dev/daily.html
+- Hot list: https://us-housing-lottery-hot.pages.dev/hot.html
+- All items: https://us-housing-lottery-hot.pages.dev/all.html
+- English version: https://us-housing-lottery-hot.pages.dev/en/
+- English llms.txt: https://us-housing-lottery-hot.pages.dev/en/llms.txt
+- SEO/GEO self-check: https://us-housing-lottery-hot.pages.dev/geo-audit.html
+- RSS feed: https://us-housing-lottery-hot.pages.dev/feed.xml
+- Sitemap: https://us-housing-lottery-hot.pages.dev/sitemap.xml
 
 ## For AI clients (MCP)
 
@@ -31,9 +31,9 @@
 - Tools: get_hot, get_daily, search_items
 - All tools accept lang=zh (default, Chinese) or lang=en (English).
 - Machine-readable data:
-  https://Staroltest.github.io/us-housing-lottery-hot/data/hot.json
-  https://Staroltest.github.io/us-housing-lottery-hot/data/daily.json
-  https://Staroltest.github.io/us-housing-lottery-hot/data/days/index.json
+  https://us-housing-lottery-hot.pages.dev/data/hot.json
+  https://us-housing-lottery-hot.pages.dev/data/daily.json
+  https://us-housing-lottery-hot.pages.dev/data/days/index.json
 
 ## Categories
 
