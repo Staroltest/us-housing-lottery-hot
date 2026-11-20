@@ -2447,11 +2447,13 @@ def page_open(site, active, title, description, prefix="", base="", canonical=""
           f'<meta property="og:description" content="{esc(description)}">\n'
           f'<meta property="og:type" content="{og_type}">\n'
           f'<meta property="og:url" content="{esc(canon)}">\n'
-          f'<meta property="og:image" content="{site_url}/favicon.svg">\n'
-          f'<meta name="twitter:card" content="summary">\n'
+          f'<meta property="og:image" content="{site_url}/assets/og-image.png">\n'
+          f'<meta property="og:image:width" content="1200">\n'
+          f'<meta property="og:image:height" content="630">\n'
+          f'<meta name="twitter:card" content="summary_large_image">\n'
           f'<meta name="twitter:title" content="{esc(title)}">\n'
           f'<meta name="twitter:description" content="{esc(description)}">\n'
-          f'<meta name="twitter:image" content="{site_url}/favicon.svg">\n')
+          f'<meta name="twitter:image" content="{site_url}/assets/og-image.png">\n')
     ld = {"@context": "https://schema.org", "@type": "WebSite",
           "name": brand_name(site, lang),
           "url": site_url + "/en/" if lang == "en" else site_url,
@@ -2484,6 +2486,8 @@ def page_open(site, active, title, description, prefix="", base="", canonical=""
             f'<link rel="alternate" type="application/rss+xml" title="{esc(brand_name(site, lang))}" href="{feed_href}">\n'
             f"{extra_head}"
             f'<link rel="icon" type="image/svg+xml" href="{base}favicon.svg">\n'
+            f'<link rel="icon" type="image/x-icon" href="{base}favicon.ico">\n'
+            f'<link rel="apple-touch-icon" href="{base}apple-touch-icon.png">\n'
             f"{og}"
             f'{ld_html}'
             f"{boot}<link rel=\"stylesheet\" href=\"{base}assets/site.css\"></head>\n<body>"
@@ -3343,6 +3347,7 @@ def render_item(site, it, related, is_selected, daily_issue, lang="zh"):
          "inLanguage": "en" if lang == "en" else "zh-CN",
          "author": {"@type": "Organization", "name": it["source"]},
          "publisher": {"@type": "Organization", "name": brand_name(site, lang)},
+         "image": site_url + "/assets/og-image.png",
          "mainEntityOfPage": canonical},
         {"@context": "https://schema.org", "@type": "BreadcrumbList",
          "itemListElement": [
@@ -3433,6 +3438,8 @@ def render_404(site):
             f"<title>Page not found · {site['name']}</title>\n"
             f"<meta name=\"description\" content=\"The page you are looking for does not exist.\">\n"
             f'<link rel="icon" type="image/svg+xml" href="{site_url}/favicon.svg">\n'
+            f'<link rel="icon" type="image/x-icon" href="{site_url}/favicon.ico">\n'
+            f'<link rel="apple-touch-icon" href="{site_url}/apple-touch-icon.png">\n'
             f"{theme_boot(site)}<link rel=\"stylesheet\" href=\"{site_url}/assets/site.css\"></head>\n<body>"
             f'<div class="shell"><div class="main"><div class="page page-reading">'
             f'<div class="empty-state" style="margin-top:20vh">'
@@ -3934,6 +3941,67 @@ def build_geo_audit(site, root, site_url, today_iso):
                "详情页缺 dateModified 或 og:type 不是 article")
     else:
         _check("item", "详情页 Article（抽查最新 1 篇）", "warn", "未找到详情页可抽查")
+
+    og_samples = [("index.html", index_html)]
+    if item_html:
+        og_samples.append(("详情页（最新 1 篇）", item_html))
+    bad_og = []
+    for _label, _h in og_samples:
+        _lacks = []
+        if "/assets/og-image.png" not in _h:
+            _lacks.append("og:image/twitter:image 未指向 /assets/og-image.png")
+        if 'content="summary_large_image"' not in _h:
+            _lacks.append("twitter:card 不是 summary_large_image")
+        if "favicon.ico" not in _h:
+            _lacks.append("favicon.ico 链接缺失")
+        if "apple-touch-icon" not in _h:
+            _lacks.append("apple-touch-icon 链接缺失")
+        if _lacks:
+            bad_og.append(f"{_label} 缺 {';'.join(_lacks)}")
+    if og_samples and not bad_og:
+        _check("og", "OG 图与图标链接（batch 2 落地检查）", "pass",
+               "首页与最新详情页 og:image / twitter:image 均指向 "
+               "/assets/og-image.png，twitter:card 为 summary_large_image，"
+               "含 favicon.ico 与 apple-touch-icon 链接。")
+    elif og_samples:
+        _check("og", "OG 图与图标链接（batch 2 落地检查）", "fail",
+               "；".join(bad_og))
+    else:
+        _check("og", "OG 图与图标链接（batch 2 落地检查）", "warn",
+               "未抽到页面可检查。")
+
+    period_samples = ["daily.html", "weekly.html", "monthly.html",
+                      "en/daily.html", "en/weekly.html", "en/monthly.html"]
+    period_html = {}
+    for _rel in period_samples:
+        _p = os.path.join(root, _rel)
+        if os.path.exists(_p):
+            period_html[_rel] = _read_text(_p)
+    bad_period = []
+    for _rel, _h in period_html.items():
+        _lacks = []
+        if 'rel="canonical"' not in _h:
+            _lacks.append("canonical")
+        if 'hreflang="zh-CN"' not in _h:
+            _lacks.append("hreflang zh-CN")
+        if 'hreflang="x-default"' not in _h:
+            _lacks.append("hreflang x-default")
+        if 'name="robots"' not in _h:
+            _lacks.append("robots meta")
+        if "application/rss+xml" not in _h:
+            _lacks.append("RSS 发现链接")
+        if _lacks:
+            bad_period.append(f"{_rel} 缺 {','.join(_lacks)}")
+    if period_html and not bad_period:
+        _check("period", "定期页 head（日报/周报/月报，中英）", "pass",
+               f"抽查 {len(period_html)} 页（日报/周报/月报，中英）全部含 canonical、"
+               "hreflang zh-CN + x-default、robots meta、RSS 发现链接。")
+    elif period_html:
+        _check("period", "定期页 head（日报/周报/月报，中英）", "fail",
+               "；".join(bad_period))
+    else:
+        _check("period", "定期页 head（日报/周报/月报，中英）", "warn",
+               "未抽到定期页可检查。")
 
     if mcp_url:
         _check("mcp", "MCP 端点可达性", "warn",
