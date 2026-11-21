@@ -10,6 +10,17 @@ listing_base 区分）：
   里 openListings[] 带 applicationDueDate、unitsAvailable、urlSlug、
   reviewOrderType、status、updatedAt；单条页
   /listing/{id}/{urlSlug} 200。
+  2026-11-21 门户改版：/listings 页变成客户端拉数空壳，__NEXT_DATA__
+  里 openListings/closedListings 均为 []、paginationData 为 null，
+  SSR 每轮抓到 0 条（页面仍 200）。改走前端同款的
+  /api/adapter/listings（Doorway 门户同款端点，见
+  tools/fetch_bloom_api.py）：
+  GET /api/adapter/listings?limit=100&page=N
+      &filter[0][$comparison]==&filter[0][status]=active
+  200，totalItems 269（3 页），行结构与 SSR 完全一致。
+  注意该端点忽略 reviewOrderType 追加过滤（实测加 filter[1]
+  后仍返回全量 269 条），只能取 active 全量、本地再筛。
+  响应很大（单页 40–70MB 全量房源对象），下载约 1 分钟/页。
 - 圣何塞 Housing Portal：https://housing.sanjoseca.gov/listings
   2026-11-18 实测：200，单页 48 条在开房源，同格式。
 
@@ -25,6 +36,9 @@ listing_base 区分）：
   被占位规则滤掉的条数会打印出来。
 没有公开 JSON API（/api/listings 返回 404；?limit=100 不改每页
 10 条），只能按 ?page=1..N 翻页，上限 40 页。
+例外：某站 SSR 变空壳时（LA 2026-11-21），改走前端同款的
+/api/adapter/listings（见 _api_page），先 SSR、空了再回退，
+圣何塞等 SSR 正常的站不受影响。
 
 版权与原创（本站硬规则，与 fetch_housing.py 相同）：
 - title 不是官方标题原文：它是事实标识串
@@ -44,6 +58,7 @@ listing_base 区分）：
 
 import json
 import re
+import urllib.parse
 import urllib.request
 from datetime import date, datetime, time, timedelta, timezone
 
@@ -55,9 +70,15 @@ UA = {"User-Agent": "Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 "
                     "(KHTML, like Gecko) Chrome/120.0.0.0 Safari/537.36",
       "Accept": "text/html,application/xhtml+xml,application/xml;q=0.9,*/*;q=0.8",
       "Accept-Language": "en-US,en;q=0.9"}
+API_UA = {"User-Agent": "Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 "
+                        "(KHTML, like Gecko) Chrome/120.0.0.0 Safari/537.36",
+          "Accept": "application/json, text/plain, */*",
+          "Accept-Language": "en-US,en;q=0.9"}
 NEXT_DATA_RE = re.compile(
     r'<script id="__NEXT_DATA__" type="application/json">(.*?)</script>', re.S)
 MAX_PAGES = 40
+API_PAGE_SIZE = 100
+API_MAX_PAGES = 10
 REVIEW_TYPES = {"lottery": "lottery", "firstComeFirstServe": "first-come"}
 
 
@@ -73,6 +94,41 @@ def _http_get(url, timeout=30):
         except urllib.error.HTTPError as e:
             last_err = e
             if e.code in (403, 429) or e.code >= 500:
+                _time.sleep(5)
+                continue
+            raise
+        except Exception as e:  # noqa: BLE001 - 网络抖动重试一次
+            last_err = e
+            _time.sleep(5)
+            continue
+    raise last_err
+
+
+def _api_page(base, page):
+    """前端同款 /api/adapter/listings（见模块 docstring）：取
+    status=active 全量一页。行结构与 SSR 的 openListings 完全一致。
+    响应很大（单页可达 70MB），超时放宽到 180 秒；5xx 重试一次。"""
+    import time as _time
+    import urllib.error
+    qs = urllib.parse.urlencode({
+        "limit": API_PAGE_SIZE,
+        "page": page,
+        "filter[0][$comparison]": "=",
+        "filter[0][status]": "active",
+    })
+    # 端点挂在站点根下，不是 /listings 子路径：/api/adapter/listings。
+    parts = urllib.parse.urlparse(base)
+    api_root = "%s://%s" % (parts.scheme, parts.netloc)
+    url = "%s/api/adapter/listings?%s" % (api_root, qs)
+    last_err = None
+    for attempt in range(2):
+        try:
+            req = urllib.request.Request(url, headers=API_UA)
+            with urllib.request.urlopen(req, timeout=180) as r:
+                return json.loads(r.read().decode("utf-8", errors="ignore"))
+        except urllib.error.HTTPError as e:
+            last_err = e
+            if e.code >= 500:
                 _time.sleep(5)
                 continue
             raise
@@ -135,19 +191,48 @@ def fetch_bloom_items(src, now):
     listing_base = (src.get("listing_base") or "").rstrip("/")
     horizon = today + timedelta(days=365)
     rows = []
-    total_pages = 1
-    page = 1
-    while page <= min(total_pages, MAX_PAGES):
-        url = base if page == 1 else "%s?page=%d" % (base, page)
-        if page > 1:
+    html = _http_get(base)
+    listings, total_pages = _page_listings(html)
+    print("bloom %s: page 1/%d: %d open listings"
+          % (city_short, total_pages, len(listings)))
+    if listings:
+        rows.extend(listings)
+        page = 2
+        while page <= min(total_pages, MAX_PAGES):
             import time as _time
             _time.sleep(1)  # 翻页之间停 1 秒，别把市政门户打爆
-        html = _http_get(url)
-        listings, total_pages = _page_listings(html)
-        print("bloom %s: page %d/%d: %d open listings"
-              % (city_short, page, total_pages, len(listings)))
-        rows.extend(listings)
-        page += 1
+            html = _http_get("%s?page=%d" % (base, page))
+            listings, total_pages = _page_listings(html)
+            print("bloom %s: page %d/%d: %d open listings"
+                  % (city_short, page, total_pages, len(listings)))
+            rows.extend(listings)
+            page += 1
+    else:
+        # SSR 为空：门户改版为客户端拉数（LA 2026-11-21 实测：
+        # __NEXT_DATA__ 里 openListings/closedListings 均为 []，
+        # paginationData 为 null，页面只剩空壳），改走前端同款的
+        # /api/adapter/listings（Doorway 门户同款端点，见
+        # tools/fetch_bloom_api.py）。行结构与 SSR 完全一致，
+        # 下游过滤共用。SSR 正常的站（圣何塞）不会走到这里。
+        print("bloom %s: SSR empty, falling back to /api/adapter/listings"
+              % city_short)
+        total_pages = 1
+        page = 1
+        while page <= min(total_pages, API_MAX_PAGES):
+            if page > 1:
+                import time as _time
+                _time.sleep(1)
+            data = _api_page(base, page)
+            api_listings = data.get("items") or []
+            meta = data.get("meta") or {}
+            try:
+                total_pages = int(meta.get("totalPages") or 1)
+            except (TypeError, ValueError):
+                total_pages = 1
+            print("bloom %s: api page %d/%d: %d active listings"
+                  % (city_short, page, total_pages, len(api_listings)))
+            rows.extend(api_listings)
+            page += 1
     print("bloom %s: %d open listings fetched" % (city_short, len(rows)))
     items = []
     skipped = 0
