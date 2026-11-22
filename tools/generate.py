@@ -4644,6 +4644,10 @@ def main():
 
     if args.daily:
         def build_period(kind, pool, window_label):
+            if kind == "daily":
+                # 日报规则 A：只收录截止日不早于本期日期的条目，已截止的不进日报。
+                edition_date = now_cst.date()
+                pool = [it for it in pool if _pub_dt(it).date() >= edition_date]
             pool_sorted = sorted(pool, key=lambda x: x["score"], reverse=True)
             items = dedup_topics(pool_sorted)[:sc["daily_top"]]
             per_cat = {}
@@ -4677,6 +4681,11 @@ def main():
         def build_period_en(kind, pool, window_label_en):
             """build_period 的英文版：同一批条目，英文日期/导读/条目数据。
             导读含本轮池子规模（仅新报告有该数据）。"""
+            if kind == "daily":
+                # Daily rule A: only items whose deadline date is on/after the
+                # edition date; already-closed items stay out of the daily.
+                edition_date = now_cst.date()
+                pool = [it for it in pool if _pub_dt(it).date() >= edition_date]
             pool_sorted = sorted(pool, key=lambda x: x["score"], reverse=True)
             items = dedup_topics(pool_sorted)[:sc["daily_top"]]
             per_cat = {}
