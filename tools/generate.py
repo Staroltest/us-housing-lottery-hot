@@ -4564,6 +4564,12 @@ def main():
     # robots.txt（SEO/GEO：明确放行 AI 爬虫，禁高频低价值抓取；llms.txt 见下方）
     with open(os.path.join(root, "robots.txt"), "w", encoding="utf-8") as f:
         f.write(build_robots_txt(site))
+    # IndexNow 密钥文件：每轮重写，内容就是 key 本身（无换行；与 AI 工具站试点同款，
+    # 顶层 config.indexnow_key，32 位 hex）。根验证文件不受影响。
+    _inx_key = cfg.get("indexnow_key", "")
+    if _inx_key:
+        with open(os.path.join(root, f"{_inx_key}.txt"), "w", encoding="utf-8") as f:
+            f.write(_inx_key)
     with open(os.path.join(root, "favicon.svg"), "w", encoding="utf-8") as f:
         f.write(LOGO_SVG)
     # sitemap.xml：真实 lastmod + 全量页面（历史 + 本轮 live + 磁盘已有详情页/存档页）
