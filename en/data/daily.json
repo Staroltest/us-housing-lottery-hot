@@ -1,38 +1,13 @@
 {
  "kind": "daily",
- "key": "2026-11-23",
- "label": "Nov 23",
- "date": "November 23, 2026",
- "date_iso": "2026-11-23",
- "issue": 6,
- "generated_at": "2026-11-22T22:04:55.922356+00:00",
- "summary": "55 items collected in the past 24 hours, 10 picks (Closing Soon 2, Open Now 6, Large Lottery 2). Headline: Bronx lottery closes Nov 23: 6 affordable rentals.",
+ "key": "2026-11-24",
+ "label": "Nov 24",
+ "date": "November 24, 2026",
+ "date_iso": "2026-11-24",
+ "issue": 7,
+ "generated_at": "2026-11-23T22:05:00.668848+00:00",
+ "summary": "53 items collected in the past 24 hours, 10 picks (Closing Soon 1, Open Now 7, Large Lottery 2). Headline: Brooklyn mega lottery: 217 affordable rentals, closing Nov 25.",
  "items": [
-  {
-   "id": "0caec92f40b839576bcc547fbdcfea69d37cec35",
-   "title": "Lottery #7728 · Bronx · 6 units · deadline 2026-11-23",
-   "link": "https://housingconnect.nyc.gov/PublicWeb/details/7728",
-   "source": "NYC Open Data: Housing Connect Lotteries",
-   "source_id": "nyc-housing-connect-open-data",
-   "published": "2026-11-23T15:59:00+00:00",
-   "en_title": "Bronx lottery closes Nov 23: 6 affordable rentals",
-   "en_oneliner": "Closing Nov 23 in the Bronx: 6 low-income rentals with a studio, one- and two-bedrooms; no rush today, but set a reminder, since the days pass quickly.",
-   "category": "closing-soon",
-   "category_label": "Closing Soon",
-   "tier": "T1",
-   "tags": [
-    "Bronx",
-    "Lottery",
-    "Affordable housing"
-   ],
-   "score": 100,
-   "reason": "Official source · Covers Bronx and Lottery · Published within 6 hours",
-   "is_new": false,
-   "trend": "same",
-   "hot_score": 100.0,
-   "prev_rank": 1,
-   "prev_hot_score": 100.0
-  },
   {
    "id": "5356991e24d526fea33c80d3442f82b17b2d5839",
    "title": "Lottery #7718 · Brooklyn · 217 units · deadline 2026-11-25",
@@ -55,7 +30,7 @@
    "is_new": false,
    "trend": "same",
    "hot_score": 100.0,
-   "prev_rank": 5,
+   "prev_rank": 2,
    "prev_hot_score": 100.0
   },
   {
@@ -105,7 +80,7 @@
    "is_new": false,
    "trend": "same",
    "hot_score": 100.0,
-   "prev_rank": 15,
+   "prev_rank": 12,
    "prev_hot_score": 100.0
   },
   {
@@ -130,7 +105,7 @@
    "is_new": false,
    "trend": "same",
    "hot_score": 100.0,
-   "prev_rank": 16,
+   "prev_rank": 13,
    "prev_hot_score": 100.0
   },
   {
@@ -155,7 +130,7 @@
    "is_new": false,
    "trend": "same",
    "hot_score": 100.0,
-   "prev_rank": 20,
+   "prev_rank": 17,
    "prev_hot_score": 100.0
   },
   {
@@ -180,7 +155,7 @@
    "is_new": false,
    "trend": "same",
    "hot_score": 100.0,
-   "prev_rank": 11,
+   "prev_rank": 8,
    "prev_hot_score": 100.0
   },
   {
@@ -257,6 +232,31 @@
    "hot_score": 100.0,
    "prev_rank": null,
    "prev_hot_score": null
+  },
+  {
+   "id": "ee092c0f6a1047598751eaccc8a32396d51f6bfa",
+   "title": "LA First-Come · Los Angeles · 1 units · deadline 2026-12-01",
+   "link": "https://access.housing.lacity.gov/listing/6268f6d0-768b-4e53-a665-1006abfbf6d4/hermoyne_apartments_569_n_rossmore_ave_los_angeles_ca",
+   "source": "Los Angeles Access Housing LA",
+   "source_id": "la-access-housing",
+   "published": "2026-12-01T15:59:00+00:00",
+   "en_title": "Los Angeles first-come deadline December 1: only 1 affordable rental left",
+   "en_oneliner": "Just 1 home left, first-come not a lottery, and the window closes December 1. If the income band fits, apply now — there is nothing to wait for.",
+   "category": "open",
+   "category_label": "Open Now",
+   "tier": "T1",
+   "tags": [
+    "Affordable housing",
+    "Deadline",
+    "Rental"
+   ],
+   "score": 100,
+   "reason": "Official source · Covers Affordable housing and Deadline · Published within 6 hours",
+   "is_new": false,
+   "trend": "same",
+   "hot_score": 100.0,
+   "prev_rank": 9,
+   "prev_hot_score": 100.0
   }
  ]
 }

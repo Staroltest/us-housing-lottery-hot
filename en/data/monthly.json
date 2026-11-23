@@ -2,11 +2,11 @@
  "kind": "monthly",
  "key": "2026-11",
  "label": "November 2026",
- "date": "November 23, 2026",
- "date_iso": "2026-11-23",
+ "date": "November 24, 2026",
+ "date_iso": "2026-11-24",
  "issue": 1,
- "generated_at": "2026-11-22T22:04:55.922356+00:00",
- "summary": "71 items collected in the past 30 days, 10 picks (Closing Soon 2, Open Now 6, Large Lottery 2). Headline: Bronx lottery closes Nov 23: 6 affordable rentals.",
+ "generated_at": "2026-11-23T22:05:00.668848+00:00",
+ "summary": "72 items collected in the past 30 days, 10 picks (Closing Soon 2, Open Now 6, Large Lottery 2). Headline: Bronx lottery closes Nov 23: 6 affordable rentals.",
  "items": [
   {
    "id": "0caec92f40b839576bcc547fbdcfea69d37cec35",
@@ -26,12 +26,12 @@
     "Affordable housing"
    ],
    "score": 100,
-   "reason": "Official source · Covers Bronx and Lottery · Published within 6 hours",
+   "reason": "Official source · Covers Bronx and Lottery · Published within 24 hours",
    "is_new": false,
    "trend": "same",
-   "hot_score": 100.0,
-   "prev_rank": 1,
-   "prev_hot_score": 100.0
+   "hot_score": 94.5,
+   "prev_rank": null,
+   "prev_hot_score": null
   },
   {
    "id": "5356991e24d526fea33c80d3442f82b17b2d5839",
@@ -55,7 +55,7 @@
    "is_new": false,
    "trend": "same",
    "hot_score": 100.0,
-   "prev_rank": 5,
+   "prev_rank": 2,
    "prev_hot_score": 100.0
   },
   {
@@ -105,7 +105,7 @@
    "is_new": false,
    "trend": "same",
    "hot_score": 100.0,
-   "prev_rank": 15,
+   "prev_rank": 12,
    "prev_hot_score": 100.0
   },
   {
@@ -130,7 +130,7 @@
    "is_new": false,
    "trend": "same",
    "hot_score": 100.0,
-   "prev_rank": 16,
+   "prev_rank": 13,
    "prev_hot_score": 100.0
   },
   {
@@ -155,7 +155,7 @@
    "is_new": false,
    "trend": "same",
    "hot_score": 100.0,
-   "prev_rank": 20,
+   "prev_rank": 17,
    "prev_hot_score": 100.0
   },
   {
@@ -180,7 +180,7 @@
    "is_new": false,
    "trend": "same",
    "hot_score": 100.0,
-   "prev_rank": 11,
+   "prev_rank": 8,
    "prev_hot_score": 100.0
   },
   {

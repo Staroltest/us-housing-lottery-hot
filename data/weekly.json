@@ -2,11 +2,11 @@
  "kind": "weekly",
  "key": "2026-W48",
  "label": "2026年第48周",
- "date": "2026年11月23日",
- "date_iso": "2026-11-23",
- "issue": 1,
- "generated_at": "2026-11-22T22:04:55.922356+00:00",
- "summary": "过去 7 天共收录 71 条动态，精选 10 条（即将截止 2 条、正在开放 6 条、大盘多套 2 条）。头条：布朗克斯抽签11月23日截止：6套可负担出租房。",
+ "date": "2026年11月24日",
+ "date_iso": "2026-11-24",
+ "issue": 2,
+ "generated_at": "2026-11-23T22:05:00.668848+00:00",
+ "summary": "过去 7 天共收录 72 条动态，精选 10 条（即将截止 2 条、正在开放 6 条、大盘多套 2 条）。头条：布朗克斯抽签11月23日截止：6套可负担出租房。",
  "items": [
   {
    "id": "0caec92f40b839576bcc547fbdcfea69d37cec35",
@@ -26,12 +26,12 @@
     "可负担住房"
    ],
    "score": 100,
-   "reason": "官方来源 · 涉及布朗克斯与抽签 · 6 小时内发布",
+   "reason": "官方来源 · 涉及布朗克斯与抽签 · 24 小时内发布",
    "is_new": false,
    "trend": "same",
-   "hot_score": 100.0,
-   "prev_rank": 1,
-   "prev_hot_score": 100.0
+   "hot_score": 94.5,
+   "prev_rank": null,
+   "prev_hot_score": null
   },
   {
    "id": "5356991e24d526fea33c80d3442f82b17b2d5839",
@@ -55,7 +55,7 @@
    "is_new": false,
    "trend": "same",
    "hot_score": 100.0,
-   "prev_rank": 5,
+   "prev_rank": 2,
    "prev_hot_score": 100.0
   },
   {
@@ -105,7 +105,7 @@
    "is_new": false,
    "trend": "same",
    "hot_score": 100.0,
-   "prev_rank": 15,
+   "prev_rank": 12,
    "prev_hot_score": 100.0
   },
   {
@@ -130,7 +130,7 @@
    "is_new": false,
    "trend": "same",
    "hot_score": 100.0,
-   "prev_rank": 16,
+   "prev_rank": 13,
    "prev_hot_score": 100.0
   },
   {
@@ -155,7 +155,7 @@
    "is_new": false,
    "trend": "same",
    "hot_score": 100.0,
-   "prev_rank": 20,
+   "prev_rank": 17,
    "prev_hot_score": 100.0
   },
   {
@@ -180,7 +180,7 @@
    "is_new": false,
    "trend": "same",
    "hot_score": 100.0,
-   "prev_rank": 11,
+   "prev_rank": 8,
    "prev_hot_score": 100.0
   },
   {
