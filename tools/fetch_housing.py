@@ -132,8 +132,9 @@ def fetch_housing_items(src, now):
                     "large": "large lottery",
                     "open": "open now"}.get(cat, "open now")
         # 内部标题：事实标识串，绝不是官方标题原文（见模块 docstring）。
-        title = ("Lottery #%s · %s · %d units · deadline %s"
-                 % (lottery_id, borough_en, units, end.isoformat()))
+        unit_word = "unit" if units == 1 else "units"
+        title = ("Lottery #%s · %s · %d %s · deadline %s"
+                 % (lottery_id, borough_en, units, unit_word, end.isoformat()))
         facts = ["lottery affordable rental", cat_word,
                  "deadline %s (%d days left)" % (end.isoformat(), days_left),
                  "open %s to %s" % (start.isoformat(), end.isoformat()),

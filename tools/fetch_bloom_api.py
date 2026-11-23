@@ -186,8 +186,9 @@ def fetch_bloom_api_items(src, now):
         kind = REVIEW_TYPES[review]
         kind_label = "Lottery" if kind == "lottery" else "First-Come"
         # 内部标题：事实标识串，绝不是官方标题原文（见模块 docstring）。
-        title = ("%s %s · %s · %d units · deadline %s"
-                 % (city_short, kind_label, city, units, end.isoformat()))
+        unit_word = "unit" if units == 1 else "units"
+        title = ("%s %s · %s · %d %s · deadline %s"
+                 % (city_short, kind_label, city, units, unit_word, end.isoformat()))
         if title in seen_titles:
             title = "%s · #%s" % (title, listing_id[-4:])
         seen_titles.add(title)

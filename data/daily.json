@@ -5,7 +5,7 @@
  "date": "2026年11月24日",
  "date_iso": "2026-11-24",
  "issue": 7,
- "generated_at": "2026-11-23T22:05:00.668848+00:00",
+ "generated_at": "2026-11-23T22:24:41.135002+00:00",
  "summary": "过去 24 小时共收录 53 条动态，精选 10 条（即将截止 1 条、正在开放 7 条、大盘多套 2 条）。头条：布鲁克林大盘抽签：217套可负担出租房，11月25日截止。",
  "items": [
   {
@@ -60,7 +60,7 @@
   },
   {
    "id": "de16574e3cdaeb698bd5f25bc959482d3c6c643c",
-   "title": "SF Lottery · San Francisco · 2 units · deadline 2026-12-02",
+   "title": "SF Waitlist · San Francisco · 2 units · deadline 2026-12-02",
    "link": "https://housing.sfgov.org/listings/a0W7y00000IbxrZEAR",
    "source": "San Francisco DAHLIA Listings",
    "source_id": "sf-dahlia-listings",
@@ -85,7 +85,7 @@
   },
   {
    "id": "aecacf9300ce82e7d03ddc71a3d695ef6082bc77",
-   "title": "SF Lottery · San Francisco · 37 units · deadline 2026-12-04",
+   "title": "SF Waitlist · San Francisco · 37 units · deadline 2026-12-04",
    "link": "https://housing.sfgov.org/listings/a0W7y00000JaZE1EAN",
    "source": "San Francisco DAHLIA Listings",
    "source_id": "sf-dahlia-listings",
@@ -135,7 +135,7 @@
   },
   {
    "id": "eb553d384608a625e99d768806da2f05a0b7c045",
-   "title": "SJ First-Come · San Jose · 1 units · deadline 2026-12-01",
+   "title": "SJ First-Come · San Jose · 1 unit · deadline 2026-12-01",
    "link": "https://housing.sanjoseca.gov/listing/f3c39f79-3c9e-422c-b2e8-a2b4e9c66651/quail_hills_senior_apartments_1260_piedmont_road_san_jose_ca",
    "source": "San Jose Housing Portal",
    "source_id": "sj-housing-portal",
@@ -235,7 +235,7 @@
   },
   {
    "id": "ee092c0f6a1047598751eaccc8a32396d51f6bfa",
-   "title": "LA First-Come · Los Angeles · 1 units · deadline 2026-12-01",
+   "title": "LA First-Come · Los Angeles · 1 unit · deadline 2026-12-01",
    "link": "https://access.housing.lacity.gov/listing/6268f6d0-768b-4e53-a665-1006abfbf6d4/hermoyne_apartments_569_n_rossmore_ave_los_angeles_ca",
    "source": "Los Angeles Access Housing LA",
    "source_id": "la-access-housing",

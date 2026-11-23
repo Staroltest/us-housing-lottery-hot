@@ -5,7 +5,7 @@
  "date": "November 24, 2026",
  "date_iso": "2026-11-24",
  "issue": 2,
- "generated_at": "2026-11-23T22:05:00.668848+00:00",
+ "generated_at": "2026-11-23T22:24:41.135002+00:00",
  "summary": "72 items collected in the past 7 days, 10 picks (Closing Soon 2, Open Now 6, Large Lottery 2). Headline: Bronx lottery closes Nov 23: 6 affordable rentals.",
  "items": [
   {
@@ -29,7 +29,7 @@
    "reason": "Official source · Covers Bronx and Lottery · Published within 24 hours",
    "is_new": false,
    "trend": "same",
-   "hot_score": 94.5,
+   "hot_score": 94.2,
    "prev_rank": null,
    "prev_hot_score": null
   },
@@ -85,7 +85,7 @@
   },
   {
    "id": "de16574e3cdaeb698bd5f25bc959482d3c6c643c",
-   "title": "SF Lottery · San Francisco · 2 units · deadline 2026-12-02",
+   "title": "SF Waitlist · San Francisco · 2 units · deadline 2026-12-02",
    "link": "https://housing.sfgov.org/listings/a0W7y00000IbxrZEAR",
    "source": "San Francisco DAHLIA Listings",
    "source_id": "sf-dahlia-listings",
@@ -110,7 +110,7 @@
   },
   {
    "id": "aecacf9300ce82e7d03ddc71a3d695ef6082bc77",
-   "title": "SF Lottery · San Francisco · 37 units · deadline 2026-12-04",
+   "title": "SF Waitlist · San Francisco · 37 units · deadline 2026-12-04",
    "link": "https://housing.sfgov.org/listings/a0W7y00000JaZE1EAN",
    "source": "San Francisco DAHLIA Listings",
    "source_id": "sf-dahlia-listings",
@@ -160,7 +160,7 @@
   },
   {
    "id": "eb553d384608a625e99d768806da2f05a0b7c045",
-   "title": "SJ First-Come · San Jose · 1 units · deadline 2026-12-01",
+   "title": "SJ First-Come · San Jose · 1 unit · deadline 2026-12-01",
    "link": "https://housing.sanjoseca.gov/listing/f3c39f79-3c9e-422c-b2e8-a2b4e9c66651/quail_hills_senior_apartments_1260_piedmont_road_san_jose_ca",
    "source": "San Jose Housing Portal",
    "source_id": "sj-housing-portal",

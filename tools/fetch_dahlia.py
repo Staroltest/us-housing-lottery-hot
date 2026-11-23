@@ -8,15 +8,20 @@
 Lottery_Results_Date、Listing_Type、Tenure、Status、listingID、
 Accepting_Online_Applications。
 
-收录规则（只收出租抽签/先到先得，不收卖房）：
+收录规则（只收出租，不收卖房；抽签、先到先得与等候名单都收，
+但等候名单必须在标题与简介里如实标为等候名单、不是抽签）：
 - Status == "Active"
 - Tenure in ("Re-rental", "New rental") —— 排除 Resale / New sale
 - Application_Due_Date >= 今天
 2026-11-18 当天：开放出租 4 条（另有 5 条在售房源被排除）。
+Listing_Type 分三类：Standard Lottery（抽签）、First Come, First Served
+（先到先得）、Waitlist Listing（等候名单）；内部标题的种类词按
+Listing_Type 如实写，绝不把等候名单写成 Lottery。
 
 版权与原创（本站硬规则，与 fetch_housing.py 相同）：
 - title 不是官方标题原文：它是事实标识串
-  "SF Lottery · San Francisco · <n> units · deadline <date>"，
+  "SF Lottery|First-Come|Waitlist · San Francisco · <n> unit(s) · deadline <date>"，
+  种类词按 Listing_Type 如实写（Waitlist Listing 绝不写成 Lottery），
   只含城市、套数、截止日这些事实；同名同套数同截止日的两条
   用 listingID 后 4 位区分。楼盘名只写进内部 summary 事实串
   （"building (internal ref only)"，只进本地 data/store.json，
@@ -104,13 +109,25 @@ def fetch_dahlia_items(src, now):
                     "open": "open now"}.get(cat, "open now")
         listing_type = (row.get("Listing_Type") or "").strip()
         tenure = (row.get("Tenure") or "").strip()
+        # 种类词按 Listing_Type 如实写：等候名单绝不写成 Lottery
+        # （2026-11-24 把关发现两条 Waitlist Listing 的内部标题写成了
+        # SF Lottery，虽未上屏——展示用的是 zh/en 改写标题——但作为
+        # 缺改写时的兜底标题仍会误导读者）。
+        _lt = listing_type.lower()
+        if "waitlist" in _lt:
+            kind_label, kind_word = "Waitlist", "waitlist"
+        elif "first come" in _lt:
+            kind_label, kind_word = "First-Come", "first-come"
+        else:
+            kind_label, kind_word = "Lottery", "lottery"
         # 内部标题：事实标识串，绝不是官方标题原文（见模块 docstring）。
-        title = ("SF Lottery · San Francisco · %d units · deadline %s"
-                 % (units, end.isoformat()))
+        unit_word = "unit" if units == 1 else "units"
+        title = ("SF %s · San Francisco · %d %s · deadline %s"
+                 % (kind_label, units, unit_word, end.isoformat()))
         if title in seen_titles:
             title = ("%s · #%s" % (title, listing_id[-4:]))
         seen_titles.add(title)
-        facts = ["lottery affordable rental", cat_word,
+        facts = ["%s affordable rental" % kind_word, cat_word,
                  "deadline %s (%d days left)" % (end.isoformat(), days_left),
                  "San Francisco, %d units" % units,
                  "tenure %s" % tenure.lower(),
