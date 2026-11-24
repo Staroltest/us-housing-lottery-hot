@@ -2,37 +2,12 @@
  "kind": "monthly",
  "key": "2026-11",
  "label": "2026年11月",
- "date": "2026年11月24日",
- "date_iso": "2026-11-24",
+ "date": "2026年11月25日",
+ "date_iso": "2026-11-25",
  "issue": 1,
- "generated_at": "2026-11-23T22:24:41.135002+00:00",
- "summary": "过去 30 天共收录 72 条动态，精选 10 条（即将截止 2 条、正在开放 6 条、大盘多套 2 条）。头条：布朗克斯抽签11月23日截止：6套可负担出租房。",
+ "generated_at": "2026-11-24T22:05:07.974711+00:00",
+ "summary": "过去 30 天共收录 73 条动态，精选 10 条（即将截止 1 条、正在开放 7 条、大盘多套 2 条）。头条：布鲁克林大盘抽签：217套可负担出租房，11月25日截止。",
  "items": [
-  {
-   "id": "0caec92f40b839576bcc547fbdcfea69d37cec35",
-   "title": "Lottery #7728 · Bronx · 6 units · deadline 2026-11-23",
-   "link": "https://housingconnect.nyc.gov/PublicWeb/details/7728",
-   "source": "NYC Open Data: Housing Connect Lotteries",
-   "source_id": "nyc-housing-connect-open-data",
-   "published": "2026-11-23T15:59:00+00:00",
-   "zh_title": "布朗克斯抽签11月23日截止：6套可负担出租房",
-   "zh_oneliner": "布朗克斯11月23日截止：6 套低收入房，开间、一居、两居都有，今天不用抢，但最好定个提醒，日子过得很快。",
-   "category": "closing-soon",
-   "category_label": "即将截止",
-   "tier": "T1",
-   "tags": [
-    "布朗克斯",
-    "抽签",
-    "可负担住房"
-   ],
-   "score": 100,
-   "reason": "官方来源 · 涉及布朗克斯与抽签 · 24 小时内发布",
-   "is_new": false,
-   "trend": "same",
-   "hot_score": 94.2,
-   "prev_rank": null,
-   "prev_hot_score": null
-  },
   {
    "id": "5356991e24d526fea33c80d3442f82b17b2d5839",
    "title": "Lottery #7718 · Brooklyn · 217 units · deadline 2026-11-25",
@@ -55,7 +30,7 @@
    "is_new": false,
    "trend": "same",
    "hot_score": 100.0,
-   "prev_rank": 2,
+   "prev_rank": 1,
    "prev_hot_score": 100.0
   },
   {
@@ -105,7 +80,7 @@
    "is_new": false,
    "trend": "same",
    "hot_score": 100.0,
-   "prev_rank": 12,
+   "prev_rank": 11,
    "prev_hot_score": 100.0
   },
   {
@@ -130,7 +105,7 @@
    "is_new": false,
    "trend": "same",
    "hot_score": 100.0,
-   "prev_rank": 13,
+   "prev_rank": 12,
    "prev_hot_score": 100.0
   },
   {
@@ -155,7 +130,7 @@
    "is_new": false,
    "trend": "same",
    "hot_score": 100.0,
-   "prev_rank": 17,
+   "prev_rank": 16,
    "prev_hot_score": 100.0
   },
   {
@@ -180,7 +155,7 @@
    "is_new": false,
    "trend": "same",
    "hot_score": 100.0,
-   "prev_rank": 8,
+   "prev_rank": 7,
    "prev_hot_score": 100.0
   },
   {
@@ -257,6 +232,31 @@
    "hot_score": 100.0,
    "prev_rank": null,
    "prev_hot_score": null
+  },
+  {
+   "id": "ee092c0f6a1047598751eaccc8a32396d51f6bfa",
+   "title": "LA First-Come · Los Angeles · 1 unit · deadline 2026-12-01",
+   "link": "https://access.housing.lacity.gov/listing/6268f6d0-768b-4e53-a665-1006abfbf6d4/hermoyne_apartments_569_n_rossmore_ave_los_angeles_ca",
+   "source": "Los Angeles Access Housing LA",
+   "source_id": "la-access-housing",
+   "published": "2026-12-01T15:59:00+00:00",
+   "zh_title": "洛杉矶先到先得12月1日截止：仅剩1套可负担出租房",
+   "zh_oneliner": "只剩1套，先到先得不抽签，12月1日就截止，名额只有一个，收入档对得上就别犹豫，材料备好立刻递交。",
+   "category": "open",
+   "category_label": "正在开放",
+   "tier": "T1",
+   "tags": [
+    "可负担住房",
+    "截止日期",
+    "出租房"
+   ],
+   "score": 100,
+   "reason": "官方来源 · 涉及可负担住房与截止日期 · 6 小时内发布",
+   "is_new": false,
+   "trend": "same",
+   "hot_score": 100.0,
+   "prev_rank": 8,
+   "prev_hot_score": 100.0
   }
  ]
 }

@@ -1,11 +1,11 @@
 {
  "kind": "daily",
- "key": "2026-11-24",
- "label": "2026年11月24日",
- "date": "2026年11月24日",
- "date_iso": "2026-11-24",
- "issue": 7,
- "generated_at": "2026-11-23T22:24:41.135002+00:00",
+ "key": "2026-11-25",
+ "label": "2026年11月25日",
+ "date": "2026年11月25日",
+ "date_iso": "2026-11-25",
+ "issue": 8,
+ "generated_at": "2026-11-24T22:05:07.974711+00:00",
  "summary": "过去 24 小时共收录 53 条动态，精选 10 条（即将截止 1 条、正在开放 7 条、大盘多套 2 条）。头条：布鲁克林大盘抽签：217套可负担出租房，11月25日截止。",
  "items": [
   {
@@ -30,7 +30,7 @@
    "is_new": false,
    "trend": "same",
    "hot_score": 100.0,
-   "prev_rank": 2,
+   "prev_rank": 1,
    "prev_hot_score": 100.0
   },
   {
@@ -80,7 +80,7 @@
    "is_new": false,
    "trend": "same",
    "hot_score": 100.0,
-   "prev_rank": 12,
+   "prev_rank": 11,
    "prev_hot_score": 100.0
   },
   {
@@ -105,7 +105,7 @@
    "is_new": false,
    "trend": "same",
    "hot_score": 100.0,
-   "prev_rank": 13,
+   "prev_rank": 12,
    "prev_hot_score": 100.0
   },
   {
@@ -130,7 +130,7 @@
    "is_new": false,
    "trend": "same",
    "hot_score": 100.0,
-   "prev_rank": 17,
+   "prev_rank": 16,
    "prev_hot_score": 100.0
   },
   {
@@ -155,7 +155,7 @@
    "is_new": false,
    "trend": "same",
    "hot_score": 100.0,
-   "prev_rank": 8,
+   "prev_rank": 7,
    "prev_hot_score": 100.0
   },
   {
@@ -255,7 +255,7 @@
    "is_new": false,
    "trend": "same",
    "hot_score": 100.0,
-   "prev_rank": 9,
+   "prev_rank": 8,
    "prev_hot_score": 100.0
   }
  ]
