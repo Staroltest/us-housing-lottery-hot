@@ -2,10 +2,10 @@
  "kind": "monthly",
  "key": "2026-11",
  "label": "November 2026",
- "date": "November 25, 2026",
- "date_iso": "2026-11-25",
+ "date": "November 26, 2026",
+ "date_iso": "2026-11-26",
  "issue": 1,
- "generated_at": "2026-11-24T22:05:07.974711+00:00",
+ "generated_at": "2026-11-25T22:04:47.559620+00:00",
  "summary": "73 items collected in the past 30 days, 10 picks (Closing Soon 1, Open Now 7, Large Lottery 2). Headline: Brooklyn mega lottery: 217 affordable rentals, closing Nov 25.",
  "items": [
   {
@@ -26,12 +26,12 @@
     "Affordable housing"
    ],
    "score": 100,
-   "reason": "Official source · Covers Brooklyn and Lottery · Published within 6 hours",
+   "reason": "Official source · Covers Brooklyn and Lottery · Published within 24 hours",
    "is_new": false,
    "trend": "same",
-   "hot_score": 100.0,
-   "prev_rank": 1,
-   "prev_hot_score": 100.0
+   "hot_score": 94.5,
+   "prev_rank": null,
+   "prev_hot_score": null
   },
   {
    "id": "ce9e75020c95cd15794d8078fb7cade13bf412e1",
@@ -80,7 +80,7 @@
    "is_new": false,
    "trend": "same",
    "hot_score": 100.0,
-   "prev_rank": 11,
+   "prev_rank": 9,
    "prev_hot_score": 100.0
   },
   {
@@ -105,7 +105,7 @@
    "is_new": false,
    "trend": "same",
    "hot_score": 100.0,
-   "prev_rank": 12,
+   "prev_rank": 10,
    "prev_hot_score": 100.0
   },
   {
@@ -130,7 +130,7 @@
    "is_new": false,
    "trend": "same",
    "hot_score": 100.0,
-   "prev_rank": 16,
+   "prev_rank": 14,
    "prev_hot_score": 100.0
   },
   {
@@ -155,7 +155,7 @@
    "is_new": false,
    "trend": "same",
    "hot_score": 100.0,
-   "prev_rank": 7,
+   "prev_rank": 5,
    "prev_hot_score": 100.0
   },
   {
@@ -180,8 +180,8 @@
    "is_new": false,
    "trend": "same",
    "hot_score": 100.0,
-   "prev_rank": null,
-   "prev_hot_score": null
+   "prev_rank": 19,
+   "prev_hot_score": 100.0
   },
   {
    "id": "061c15bffb6aeb7cce491def6b3375dbe548278b",
@@ -255,7 +255,7 @@
    "is_new": false,
    "trend": "same",
    "hot_score": 100.0,
-   "prev_rank": 8,
+   "prev_rank": 6,
    "prev_hot_score": 100.0
   }
  ]

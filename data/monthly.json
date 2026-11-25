@@ -2,10 +2,10 @@
  "kind": "monthly",
  "key": "2026-11",
  "label": "2026年11月",
- "date": "2026年11月25日",
- "date_iso": "2026-11-25",
+ "date": "2026年11月26日",
+ "date_iso": "2026-11-26",
  "issue": 1,
- "generated_at": "2026-11-24T22:05:07.974711+00:00",
+ "generated_at": "2026-11-25T22:04:47.559620+00:00",
  "summary": "过去 30 天共收录 73 条动态，精选 10 条（即将截止 1 条、正在开放 7 条、大盘多套 2 条）。头条：布鲁克林大盘抽签：217套可负担出租房，11月25日截止。",
  "items": [
   {
@@ -26,12 +26,12 @@
     "可负担住房"
    ],
    "score": 100,
-   "reason": "官方来源 · 涉及布鲁克林与抽签 · 6 小时内发布",
+   "reason": "官方来源 · 涉及布鲁克林与抽签 · 24 小时内发布",
    "is_new": false,
    "trend": "same",
-   "hot_score": 100.0,
-   "prev_rank": 1,
-   "prev_hot_score": 100.0
+   "hot_score": 94.5,
+   "prev_rank": null,
+   "prev_hot_score": null
   },
   {
    "id": "ce9e75020c95cd15794d8078fb7cade13bf412e1",
@@ -80,7 +80,7 @@
    "is_new": false,
    "trend": "same",
    "hot_score": 100.0,
-   "prev_rank": 11,
+   "prev_rank": 9,
    "prev_hot_score": 100.0
   },
   {
@@ -105,7 +105,7 @@
    "is_new": false,
    "trend": "same",
    "hot_score": 100.0,
-   "prev_rank": 12,
+   "prev_rank": 10,
    "prev_hot_score": 100.0
   },
   {
@@ -130,7 +130,7 @@
    "is_new": false,
    "trend": "same",
    "hot_score": 100.0,
-   "prev_rank": 16,
+   "prev_rank": 14,
    "prev_hot_score": 100.0
   },
   {
@@ -155,7 +155,7 @@
    "is_new": false,
    "trend": "same",
    "hot_score": 100.0,
-   "prev_rank": 7,
+   "prev_rank": 5,
    "prev_hot_score": 100.0
   },
   {
@@ -180,8 +180,8 @@
    "is_new": false,
    "trend": "same",
    "hot_score": 100.0,
-   "prev_rank": null,
-   "prev_hot_score": null
+   "prev_rank": 19,
+   "prev_hot_score": 100.0
   },
   {
    "id": "061c15bffb6aeb7cce491def6b3375dbe548278b",
@@ -255,7 +255,7 @@
    "is_new": false,
    "trend": "same",
    "hot_score": 100.0,
-   "prev_rank": 8,
+   "prev_rank": 6,
    "prev_hot_score": 100.0
   }
  ]
