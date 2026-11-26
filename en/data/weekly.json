@@ -2,37 +2,12 @@
  "kind": "weekly",
  "key": "2026-W48",
  "label": "Week 48, 2026",
- "date": "November 26, 2026",
- "date_iso": "2026-11-26",
+ "date": "November 27, 2026",
+ "date_iso": "2026-11-27",
  "issue": 2,
- "generated_at": "2026-11-25T22:04:47.559620+00:00",
- "summary": "70 items collected in the past 7 days, 10 picks (Closing Soon 1, Open Now 7, Large Lottery 2). Headline: Brooklyn mega lottery: 217 affordable rentals, closing Nov 25.",
+ "generated_at": "2026-11-26T22:05:11.328106+00:00",
+ "summary": "67 items collected in the past 7 days, 10 picks (Open Now 8, Large Lottery 2). Headline: Bronx lottery open until December 18: 6 affordable rentals.",
  "items": [
-  {
-   "id": "5356991e24d526fea33c80d3442f82b17b2d5839",
-   "title": "Lottery #7718 · Brooklyn · 217 units · deadline 2026-11-25",
-   "link": "https://housingconnect.nyc.gov/PublicWeb/details/7718",
-   "source": "NYC Open Data: Housing Connect Lotteries",
-   "source_id": "nyc-housing-connect-open-data",
-   "published": "2026-11-25T15:59:00+00:00",
-   "en_title": "Brooklyn mega lottery: 217 affordable rentals, closing Nov 25",
-   "en_oneliner": "The biggest opening on the board: 217 Brooklyn rentals, closing Nov 25, with homes for extremely low, very low and low incomes and every bedroom size; if you can only apply to one lottery, make it this one.",
-   "category": "closing-soon",
-   "category_label": "Closing Soon",
-   "tier": "T1",
-   "tags": [
-    "Brooklyn",
-    "Lottery",
-    "Affordable housing"
-   ],
-   "score": 100,
-   "reason": "Official source · Covers Brooklyn and Lottery · Published within 24 hours",
-   "is_new": false,
-   "trend": "same",
-   "hot_score": 94.5,
-   "prev_rank": null,
-   "prev_hot_score": null
-  },
   {
    "id": "ce9e75020c95cd15794d8078fb7cade13bf412e1",
    "title": "Lottery #7663 · Bronx · 6 units · deadline 2026-12-18",
@@ -256,6 +231,31 @@
    "trend": "same",
    "hot_score": 100.0,
    "prev_rank": 6,
+   "prev_hot_score": 100.0
+  },
+  {
+   "id": "de2ee97900f8a164bf0eb933d05025aab0254356",
+   "title": "LA First-Come · Los Angeles · 4 units · deadline 2026-12-01",
+   "link": "https://access.housing.lacity.gov/listing/38dd034e-5664-4881-96b4-a378d38837de/3567_s_chesapeake_ave_3567_s_chesapeake_ave_los_angeles_ca",
+   "source": "Los Angeles Access Housing LA",
+   "source_id": "la-access-housing",
+   "published": "2026-12-01T15:59:00+00:00",
+   "en_title": "Los Angeles first-come deadline December 1: 4 affordable rentals",
+   "en_oneliner": "4 homes, first-come not a lottery, closing December 1. First-come rewards speed, so apply early if the income band fits.",
+   "category": "open",
+   "category_label": "Open Now",
+   "tier": "T1",
+   "tags": [
+    "Affordable housing",
+    "Deadline",
+    "Rental"
+   ],
+   "score": 100,
+   "reason": "Official source · Covers Affordable housing and Deadline · Published within 6 hours",
+   "is_new": false,
+   "trend": "same",
+   "hot_score": 100.0,
+   "prev_rank": 7,
    "prev_hot_score": 100.0
   }
  ]

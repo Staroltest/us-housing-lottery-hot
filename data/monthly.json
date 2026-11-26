@@ -2,37 +2,12 @@
  "kind": "monthly",
  "key": "2026-11",
  "label": "2026年11月",
- "date": "2026年11月26日",
- "date_iso": "2026-11-26",
+ "date": "2026年11月27日",
+ "date_iso": "2026-11-27",
  "issue": 1,
- "generated_at": "2026-11-25T22:04:47.559620+00:00",
- "summary": "过去 30 天共收录 73 条动态，精选 10 条（即将截止 1 条、正在开放 7 条、大盘多套 2 条）。头条：布鲁克林大盘抽签：217套可负担出租房，11月25日截止。",
+ "generated_at": "2026-11-26T22:05:11.328106+00:00",
+ "summary": "过去 30 天共收录 74 条动态，精选 10 条（正在开放 8 条、大盘多套 2 条）。头条：布朗克斯抽签开到12月18日：6套可负担出租房。",
  "items": [
-  {
-   "id": "5356991e24d526fea33c80d3442f82b17b2d5839",
-   "title": "Lottery #7718 · Brooklyn · 217 units · deadline 2026-11-25",
-   "link": "https://housingconnect.nyc.gov/PublicWeb/details/7718",
-   "source": "NYC Open Data: Housing Connect Lotteries",
-   "source_id": "nyc-housing-connect-open-data",
-   "published": "2026-11-25T15:59:00+00:00",
-   "zh_title": "布鲁克林大盘抽签：217套可负担出租房，11月25日截止",
-   "zh_oneliner": "布鲁克林 217 套房的大盘，11月25日截止，极低、很低、低收入档都有，开间到三居齐全，如果只能报一个抽签，我的建议就是报它。",
-   "category": "closing-soon",
-   "category_label": "即将截止",
-   "tier": "T1",
-   "tags": [
-    "布鲁克林",
-    "抽签",
-    "可负担住房"
-   ],
-   "score": 100,
-   "reason": "官方来源 · 涉及布鲁克林与抽签 · 24 小时内发布",
-   "is_new": false,
-   "trend": "same",
-   "hot_score": 94.5,
-   "prev_rank": null,
-   "prev_hot_score": null
-  },
   {
    "id": "ce9e75020c95cd15794d8078fb7cade13bf412e1",
    "title": "Lottery #7663 · Bronx · 6 units · deadline 2026-12-18",
@@ -256,6 +231,31 @@
    "trend": "same",
    "hot_score": 100.0,
    "prev_rank": 6,
+   "prev_hot_score": 100.0
+  },
+  {
+   "id": "de2ee97900f8a164bf0eb933d05025aab0254356",
+   "title": "LA First-Come · Los Angeles · 4 units · deadline 2026-12-01",
+   "link": "https://access.housing.lacity.gov/listing/38dd034e-5664-4881-96b4-a378d38837de/3567_s_chesapeake_ave_3567_s_chesapeake_ave_los_angeles_ca",
+   "source": "Los Angeles Access Housing LA",
+   "source_id": "la-access-housing",
+   "published": "2026-12-01T15:59:00+00:00",
+   "zh_title": "洛杉矶先到先得12月1日截止：4套可负担出租房",
+   "zh_oneliner": "4套房先到先得，12月1日截止，名额不多，先到先得拼的是手速，收入档合适就尽早递交。",
+   "category": "open",
+   "category_label": "正在开放",
+   "tier": "T1",
+   "tags": [
+    "可负担住房",
+    "截止日期",
+    "出租房"
+   ],
+   "score": 100,
+   "reason": "官方来源 · 涉及可负担住房与截止日期 · 6 小时内发布",
+   "is_new": false,
+   "trend": "same",
+   "hot_score": 100.0,
+   "prev_rank": 7,
    "prev_hot_score": 100.0
   }
  ]
